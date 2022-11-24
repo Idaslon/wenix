@@ -1,9 +1,9 @@
-import { GetStaticProps } from "next";
+import { GetStaticProps } from 'next';
 
 export const getStaticProps: GetStaticProps = () => {
   return {
     redirect: {
-      destination: "/login",
+      destination: '/login',
       permanent: true,
     },
   };

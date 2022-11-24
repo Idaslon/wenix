@@ -1,5 +1,144 @@
+import { default as NextLink } from 'next/link';
+import { spacing, styled } from '../../stitches.config';
+
+const Form = styled('form', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+
+  width: '100%',
+  maxWidth: '450px',
+
+  margin: 'auto',
+  paddingTop: spacing(11),
+  paddingBottom: spacing(20),
+  paddingInline: spacing(12),
+
+  border: '1px solid',
+  borderColor: '$stroke',
+
+  backgroundColor: '#141515',
+});
+
+const Title = styled('h1', {
+  color: '#F8F8F8',
+  fontSize: '$extraLarge',
+});
+
+const InputsContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  rowGap: '$5',
+
+  width: '100%',
+  marginTop: spacing(9),
+});
+
+const Input = styled('input', {
+  paddingBlock: spacing(4.5),
+  paddingInline: '$5',
+
+  fontSize: '$medium',
+  color: '#F8F8F8',
+
+  border: '2px solid',
+  borderColor: '$stroke',
+  borderRadius: '4px',
+
+  outline: 'none',
+  backgroundColor: '#0D0E0E',
+
+  '&::placeholder': {
+    color: '#5F6F72',
+    opacity: 1,
+  },
+
+  '&:-ms-input-placeholder': {
+    color: '#5F6F72',
+  },
+
+  '&::-ms-input-placeholder': {
+    color: '#5F6F72',
+  },
+
+  '&:disabled': {
+    opacity: 0.6,
+    cursor: 'not-allowed',
+  },
+
+  '&:focus': {
+    borderColor: '$primaryMain',
+  },
+});
+
+export const Link = styled(NextLink, {
+  color: '$commonWhite',
+  textDecoration: 'none',
+
+  '&:hover': {
+    textDecoration: 'underline',
+  },
+});
+
+export const LoginLink = styled(Link, {
+  width: 'fit-content',
+
+  color: '$primaryMain',
+  fontWeight: 500,
+});
+
+export const Button = styled('button', {
+  paddingBlock: '$4',
+  paddingInline: '$5',
+
+  fontSize: '$large',
+  fontWeight: 700,
+
+  color: '$commonWhite',
+  backgroundColor: '$primaryMain',
+
+  borderRadius: '4px',
+  cursor: 'pointer',
+});
+
+export const LoginButton = styled(Button, {
+  width: '100%',
+  marginTop: '68px',
+});
+
+export const Paragraph = styled('p', {
+  fontSize: '$medium',
+  lineHeight: 1.2,
+  marginTop: '$6',
+
+  a: {
+    fontSize: '$medium',
+    lineHeight: 1.2,
+  },
+});
+
 const Login = () => {
-  return <h1>Login</h1>;
+  return (
+    <Form>
+      <Title>Sign into Wenix</Title>
+
+      <InputsContainer>
+        <Input type="email" name="email" placeholder="Enter your email" />
+        <Input
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+        />
+        <LoginLink href="#">Forgot password</LoginLink>
+      </InputsContainer>
+
+      <LoginButton>Sign In</LoginButton>
+
+      <Paragraph>
+        Do not have an account? <LoginLink href="#">Create one</LoginLink>
+      </Paragraph>
+    </Form>
+  );
 };
 
 export default Login;
