@@ -67,12 +67,12 @@ const Input = styled('input', {
   },
 
   '&:focus': {
-    borderColor: '$primaryMain',
+    borderColor: '$primary400',
   },
 });
 
 export const Link = styled(NextLink, {
-  color: '$commonWhite',
+  color: '$common-white',
   textDecoration: 'none',
 
   outline: 'none',
@@ -85,7 +85,7 @@ export const Link = styled(NextLink, {
 export const LoginLink = styled(Link, {
   width: 'fit-content',
 
-  color: '$primaryMain',
+  color: '$primary400',
   fontWeight: 500,
 });
 
@@ -96,15 +96,24 @@ export const Button = styled('button', {
   fontSize: '$large',
   fontWeight: 700,
 
-  color: '$commonWhite',
-  backgroundColor: '$primaryMain',
+  color: '$common-white',
+  backgroundColor: '$primary400 ',
 
   borderRadius: '4px',
   cursor: 'pointer',
 
   outline: 'none',
+  transition: 'background 300ms ease-in-out',
 
-  '&:focus': {
+  '&:hover': {
+    backgroundColor: '$primary500',
+  },
+
+  '&:active': {
+    backgroundColor: '$primary700',
+  },
+
+  '&:focus-visible': {
     position: 'relative',
 
     '&::before': {
@@ -123,6 +132,11 @@ export const Button = styled('button', {
 
       backgroundColor: 'transparent',
     },
+  },
+
+  '&[disabled]': {
+    cursor: 'not-allowed',
+    backgroundColor: '$primary300',
   },
 });
 

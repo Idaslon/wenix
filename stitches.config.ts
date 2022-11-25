@@ -3,10 +3,13 @@ import { createStitches } from '@stitches/react';
 export const { styled, css, getCssText, keyframes } = createStitches({
   theme: {
     colors: {
-      commonWhite: 'hsl(0, 0%, 100%)',
-      commonBlack: 'hsl(220, 33%, 9%)',
+      'common-white': 'hsl(0, 0%, 100%)',
+      'common-black': 'hsl(220, 33%, 9%)',
 
-      primaryMain: '#4561F3',
+      primary300: 'hsl(233, 100%, 70%)',
+      primary400: 'hsl(230, 88%, 61%)',
+      primary500: 'hsl(230, 80%, 55%)',
+      primary700: 'hsl(230, 80%, 50%)',
 
       gray200: 'hsl(0, 0%, 94%)',
       gray300: 'hsl(0, 0%, 88%)',
@@ -19,8 +22,8 @@ export const { styled, css, getCssText, keyframes } = createStitches({
       stroke: 'hsl(0, 0%, 0%)',
     },
     zIndices: {
-      drawerIndex: 1,
-      floatIndex: 2,
+      'drawer-index': 1,
+      'float-index': 2,
     },
     space: {
       1: '4px',
