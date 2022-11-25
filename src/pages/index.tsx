@@ -1,6 +1,6 @@
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 
-export const getStaticProps: GetStaticProps = () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   return {
     redirect: {
       destination: '/login',
