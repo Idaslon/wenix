@@ -1,0 +1,5 @@
+{
+  "name": "@wenix/input",
+  "main": "./index.tsx",
+  "version": "0.1.0"
+}

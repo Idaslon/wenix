@@ -1,0 +1,5 @@
+{
+  "name": "@wenix/form",
+  "main": "./index.tsx",
+  "version": "0.1.0"
+}

@@ -11,6 +11,7 @@ export const { styled, css, getCssText, keyframes } = createStitches({
       primary500: 'hsl(230, 80%, 55%)',
       primary700: 'hsl(230, 80%, 50%)',
 
+      gray100: 'hsl(0, 0%, 97%)',
       gray200: 'hsl(0, 0%, 94%)',
       gray300: 'hsl(0, 0%, 88%)',
       grey350: 'hsl(0, 0%, 87%)',
