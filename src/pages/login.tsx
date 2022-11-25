@@ -55,19 +55,9 @@ const Login = () => {
       <Title>Sign into Wenix</Title>
 
       <InputsContainer>
-        <Input
-          required
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-        />
+        <Input required type="email" name="email" placeholder="Enter your email" />
+        <Input required type="password" name="password" placeholder="Enter your password" />
 
-        <Input
-          required
-          type="password"
-          name="password"
-          placeholder="Enter your password"
-        />
         <LoginLink href="#">Forgot password</LoginLink>
       </InputsContainer>
 
