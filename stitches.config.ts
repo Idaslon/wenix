@@ -14,16 +14,20 @@ export const { styled, css, getCssText, keyframes } = createStitches({
       gray100: 'hsl(0, 0%, 97%)',
       gray200: 'hsl(0, 0%, 94%)',
       gray300: 'hsl(0, 0%, 88%)',
-      grey350: 'hsl(0, 0%, 87%)',
-      grey500: 'hsl(0, 0%, 58%)',
-      grey600: 'hsl(0, 0%, 48%)',
-      grey700: 'hsl(0, 0%, 36%)',
-      grey800: 'hsl(0, 0%, 30%)',
+      gray350: 'hsl(0, 0%, 87%)',
+      gray500: 'hsl(0, 0%, 58%)',
+      gray600: 'hsl(0, 0%, 48%)',
+      gray700: 'hsl(0, 0%, 36%)',
+      gray800: 'hsl(0, 0%, 30%)',
+
+      blue200: 'hsl(217, 100%, 61%)',
+
+      black600: 'hsl(180, 2%, 8%)',
+      black700: 'hsl(180, 4%, 5%)',
 
       stroke: 'hsl(0, 0%, 0%)',
     },
     zIndices: {
-      'drawer-index': 1,
       'float-index': 2,
     },
     space: {
@@ -33,8 +37,6 @@ export const { styled, css, getCssText, keyframes } = createStitches({
       4: '16px',
       5: '20px',
       6: '24px',
-
-      section: '150px',
     },
     fontSizes: {
       small: '1.4rem',
@@ -45,12 +47,12 @@ export const { styled, css, getCssText, keyframes } = createStitches({
     },
   },
   media: {
-    extraSmall: '(min-width: 0px)',
-    small: '(min-width: 360px)',
-    medium: '(min-width: 700px)',
-    large: '(min-width: 1024px)',
-    extraLarge: '(min-width: 1200px)',
-    wide: '(min-width: 1440px)',
+    xs: '(min-width: 0px)',
+    sm: '(min-width: 360px)',
+    md: '(min-width: 700px)',
+    lg: '(min-width: 1024px)',
+    xl: '(min-width: 1200px)',
+    '2xl': '(min-width: 1440px)',
   },
 });
 

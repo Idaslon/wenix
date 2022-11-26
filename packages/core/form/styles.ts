@@ -12,5 +12,5 @@ export const StyledForm = styled('form', {
   border: '1px solid',
   borderColor: '$stroke',
 
-  backgroundColor: '#141515',
+  backgroundColor: '$black600',
 });

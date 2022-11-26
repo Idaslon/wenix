@@ -12,19 +12,19 @@ export const StyledInput = styled('input', {
   borderRadius: '4px',
 
   outline: 'none',
-  backgroundColor: '#0D0E0E',
+  backgroundColor: '$black700',
 
   '&::placeholder': {
-    color: '#5F6F72',
+    color: '$gray700',
     opacity: 1,
   },
 
   '&:-ms-input-placeholder': {
-    color: '#5F6F72',
+    color: '$gray700',
   },
 
   '&::-ms-input-placeholder': {
-    color: '#5F6F72',
+    color: '$gray700',
   },
 
   '&:disabled': {

@@ -38,7 +38,7 @@ export const StyledButton = styled('button', {
       height: 'calc(100% + 8px)',
 
       border: '4px solid',
-      borderColor: '#3A86FF',
+      borderColor: '$blue200',
       borderRadius: '8px',
 
       backgroundColor: 'transparent',

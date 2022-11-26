@@ -1,17 +1,12 @@
 import { spacing, styled } from '@wenix/stitches';
 
-import { Button, Form, Input, Link } from '@wenix/core';
+import { Button, Form, Input, Link, Typography } from '@wenix/core';
 
 const LoginForm = styled(Form, {
   width: '100%',
   maxWidth: '450px',
 
   margin: 'auto',
-});
-
-const Title = styled('h1', {
-  color: '#F8F8F8',
-  fontSize: '$extraLarge',
 });
 
 const InputsContainer = styled('div', {
@@ -35,21 +30,14 @@ export const LoginButton = styled(Button, {
   marginTop: '68px',
 });
 
-export const Paragraph = styled('p', {
-  fontSize: '$medium',
-  lineHeight: 1.2,
+export const CreateAccountText = styled(Typography, {
   marginTop: '$6',
-
-  a: {
-    fontSize: '$medium',
-    lineHeight: 1.2,
-  },
 });
 
 const Login = () => {
   return (
     <LoginForm>
-      <Title>Sign into Wenix</Title>
+      <Typography variant="h1">Sign into Wenix</Typography>
 
       <InputsContainer>
         <Input required type="email" name="email" placeholder="Enter your email" />
@@ -60,9 +48,9 @@ const Login = () => {
 
       <LoginButton>Sign In</LoginButton>
 
-      <Paragraph>
+      <CreateAccountText variant="body1">
         Do not have an account? <LoginLink href="#">Create one</LoginLink>
-      </Paragraph>
+      </CreateAccountText>
     </LoginForm>
   );
 };
