@@ -13,15 +13,16 @@ import {
 export type TypographyVariants = 'h1' | 'h2' | 'h3' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2';
 export type TypographySizes = 'small' | 'medium' | 'large';
 
-interface BaseProps extends HTMLAttributes<HTMLSpanElement> {
+export interface TypographyProps extends HTMLAttributes<HTMLSpanElement> {
   as?: React.ElementType;
   css?: CSS;
-}
 
-interface Props extends BaseProps {
   variant: TypographyVariants;
   size?: TypographySizes;
 }
+
+// TODO: Find a way to improve this
+export type TypographyRef = HTMLParagraphElement;
 
 const elementsBridge = {
   h1: {
@@ -54,7 +55,7 @@ const elementsBridge = {
   },
 };
 
-export const Typography: React.FC<Props> = ({ variant, size, children, ...rest }) => {
+export const Typography = ({ variant, size, children, ...rest }: TypographyProps) => {
   const { Element, className } = elementsBridge[variant];
 
   return (
