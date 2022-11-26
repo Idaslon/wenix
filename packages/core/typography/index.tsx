@@ -1,5 +1,6 @@
 import { CSS } from '@stitches/react';
 import React, { HTMLAttributes } from 'react';
+import { CoreSizes } from '../types';
 import {
   TypographyBody1,
   TypographyBody2,
@@ -11,7 +12,7 @@ import {
 } from './styles';
 
 export type TypographyVariants = 'h1' | 'h2' | 'h3' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2';
-export type TypographySizes = 'small' | 'medium' | 'large';
+export type TypographySizes = CoreSizes;
 
 export interface TypographyProps extends HTMLAttributes<HTMLSpanElement> {
   as?: React.ElementType;

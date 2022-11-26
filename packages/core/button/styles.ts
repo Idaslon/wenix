@@ -1,12 +1,6 @@
 import { styled } from '@wenix/stitches';
 
 export const StyledButton = styled('button', {
-  paddingBlock: '$4',
-  paddingInline: '$5',
-
-  fontSize: '$large',
-  fontWeight: 700,
-
   color: '$common-white',
   backgroundColor: '$primary400 ',
 
@@ -48,5 +42,31 @@ export const StyledButton = styled('button', {
   '&[disabled]': {
     cursor: 'not-allowed',
     backgroundColor: '$primary300',
+  },
+
+  variants: {
+    size: {
+      small: {
+        paddingBlock: '$2',
+        paddingInline: '$3',
+
+        fontSize: '1.2rem',
+        fontWeight: 700,
+      },
+      medium: {
+        paddingBlock: '$3',
+        paddingInline: '$4',
+
+        fontSize: '1.6rem',
+        fontWeight: 700,
+      },
+      large: {
+        paddingBlock: '$4',
+        paddingInline: '$5',
+
+        fontSize: '1.8rem',
+        fontWeight: 700,
+      },
+    },
   },
 });

@@ -46,7 +46,7 @@ const Login = () => {
         <LoginLink href="#">Forgot password</LoginLink>
       </InputsContainer>
 
-      <LoginButton>Sign In</LoginButton>
+      <LoginButton size="large">Sign In</LoginButton>
 
       <CreateAccountText variant="body1">
         Do not have an account? <LoginLink href="#">Create one</LoginLink>
