@@ -1,9 +1,6 @@
 import { spacing, styled } from '@wenix/stitches';
 
-import { Button } from '@wenix/button';
-import { Input } from '@wenix/input';
-import { Form } from '@wenix/form';
-import { Link } from '@wenix/link';
+import { Button, Form, Input, Link } from '@wenix/core';
 
 const LoginForm = styled(Form, {
   width: '100%',
