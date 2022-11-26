@@ -1,3 +1,6 @@
+// TODO: Addon for mock api data
+// https://github.com/mswjs/msw-storybook-addon
+
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
