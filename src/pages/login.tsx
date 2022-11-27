@@ -49,7 +49,7 @@ const Login = () => {
       <LoginButton size="large">Sign In</LoginButton>
 
       <CreateAccountText variant="body1">
-        Do not have an account? <LoginLink href="#">Create one</LoginLink>
+        Do not have an account? <LoginLink href="/create-account">Create one</LoginLink>
       </CreateAccountText>
     </LoginForm>
   );

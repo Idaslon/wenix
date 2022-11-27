@@ -10,7 +10,9 @@ export const TypographyH1 = styled('h1', {
       medium: {
         fontSize: '2.6rem',
       },
-      large: {},
+      large: {
+        fontSize: '4rem',
+      },
     },
   },
 });
