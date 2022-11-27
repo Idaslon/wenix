@@ -9,6 +9,7 @@ export const TypographyH1 = styled('h1', {
       small: {},
       medium: {
         fontSize: '2.6rem',
+        lineHeight: '3rem',
       },
       large: {
         fontSize: '4rem',

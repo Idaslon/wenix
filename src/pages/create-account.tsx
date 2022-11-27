@@ -14,13 +14,17 @@ const AccountForm = styled(Form, {
   margin: 'auto',
 });
 
-const SideContainer = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
+const AccountTitle = styled(Typography, {
+  textAlign: 'center',
+});
 
+const SideContainer = styled('div', {
   width: '100%',
   maxWidth: '350px',
+});
+
+const LeftSideSpacer = styled('div', {
+  height: '70px', // Typography-h1 height + marginTop
 });
 
 const InputsContainer = styled('div', {
@@ -64,7 +68,7 @@ const CreateAccount = () => {
   return (
     <AccountForm>
       <SideContainer>
-        <Typography variant="h1">Create Account</Typography>
+        <AccountTitle variant="h1">Create Account</AccountTitle>
 
         <InputsContainer>
           <Input required type="text" name="name" placeholder="Enter your name" />
@@ -76,6 +80,7 @@ const CreateAccount = () => {
       </SideContainer>
 
       <SideContainer>
+        <LeftSideSpacer />
         <MarketingText variant="h1" size="large">
           Create an account on our platform
         </MarketingText>
