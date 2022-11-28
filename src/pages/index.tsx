@@ -14,3 +14,10 @@ const Home = () => {
 };
 
 export default Home;
+
+/**
+ * Organize Login & Create Account pages
+ * SEO
+ * Posts
+ * Post Detail
+ */
