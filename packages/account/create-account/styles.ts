@@ -8,8 +8,6 @@ export const AccountForm = styled(Form, {
 
   width: '100%',
   maxWidth: '1000px',
-
-  margin: 'auto',
 });
 
 export const AccountTitle = styled(Typography, {

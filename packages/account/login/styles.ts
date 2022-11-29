@@ -2,11 +2,9 @@ import { Button, Form, Link, spacing, styled, Typography } from '@wenix/ui';
 
 import { FormInputsContainer } from '../shared/styles';
 
-export const LoginForm = styled(Form, {
+export const StyledForm = styled(Form, {
   width: '100%',
   maxWidth: '450px',
-
-  margin: 'auto',
 });
 
 export const InputsContainer = styled(FormInputsContainer, {

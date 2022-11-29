@@ -17,8 +17,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "@wenix/ui": "*",
-    "@wenix/create-account": "*",
-    "@wenix/account-login": "*"
+    "@wenix/account": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",

@@ -14,7 +14,7 @@ import {
   SideContainer,
 } from './styles';
 
-export const CreateAccountPage = () => {
+export const CreateAccountForm = () => {
   return (
     <AccountForm>
       <SideContainer>

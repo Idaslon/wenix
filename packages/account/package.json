@@ -1,5 +1,5 @@
 {
-  "name": "@wenix/create-account",
+  "name": "@wenix/account",
   "main": "./index.ts",
   "version": "0.1.0",
   "private": true,
