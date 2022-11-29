@@ -1,4 +1,3 @@
-import React from 'react';
 import { Input, Typography } from '@wenix/ui';
 import { CreateAccountText, InputsContainer, LoginButton, LoginForm, LoginLink } from './styles';
 

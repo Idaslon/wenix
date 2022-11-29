@@ -1,4 +1,3 @@
-export * from './types';
 export * from './stitches.config';
 
 export * from './src/button';

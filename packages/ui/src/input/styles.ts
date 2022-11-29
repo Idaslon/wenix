@@ -1,4 +1,4 @@
-import { spacing, styled } from '@wenix/stitches';
+import { spacing, styled } from '../../stitches.config';
 
 export const StyledInput = styled('input', {
   paddingBlock: spacing(4.5),

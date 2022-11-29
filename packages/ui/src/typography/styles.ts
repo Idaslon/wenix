@@ -1,4 +1,4 @@
-import { styled } from '@wenix/stitches';
+import { styled } from '../../stitches.config';
 
 export const TypographyH1 = styled('h1', {
   fontWeight: 700,

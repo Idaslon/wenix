@@ -17,5 +17,10 @@
     "eslint-config-turbo": "^0.0.4",
     "prettier": "^2.8.0",
     "turbo": "^1.6.3"
+  },
+  "packageManager": "yarn@1.22.19",
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
   }
 }

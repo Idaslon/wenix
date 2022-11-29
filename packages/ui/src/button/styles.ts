@@ -1,4 +1,4 @@
-import { styled } from '@wenix/stitches';
+import { styled } from '../../stitches.config';
 
 export const StyledButton = styled('button', {
   color: '$common-white',

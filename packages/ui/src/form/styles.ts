@@ -1,4 +1,4 @@
-import { spacing, styled } from '@wenix/stitches';
+import { spacing, styled } from '../../stitches.config';
 
 export const StyledForm = styled('form', {
   display: 'flex',
