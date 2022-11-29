@@ -1,5 +1,4 @@
-import { Button, Form, Link, Typography } from '@wenix/core';
-import { spacing, styled } from '@wenix/stitches';
+import { Button, Form, Link, spacing, styled, Typography } from '@wenix/ui';
 
 import { FormInputsContainer } from '../shared/styles';
 

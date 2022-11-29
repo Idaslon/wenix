@@ -1,4 +1,5 @@
-import { Input, Typography } from '@wenix/core';
+import React from 'react';
+import { Input, Typography } from '@wenix/ui';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import {

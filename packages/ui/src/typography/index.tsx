@@ -1,6 +1,7 @@
 import { CSS } from '@stitches/react';
-import React, { HTMLAttributes } from 'react';
-import { CoreSizes } from '../types';
+import React from 'react';
+import { HTMLAttributes } from 'react';
+import { CoreSizes } from '../../types';
 import {
   TypographyBody1,
   TypographyBody2,

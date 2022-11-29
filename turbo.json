@@ -1,0 +1,29 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "lint": {
+      "outputs": []
+    },
+    "deploy": {
+      "dependsOn": ["build", "test", "lint"],
+      "outputs": []
+    },
+    "web#dev": {
+      "env": [
+        "NEXT_PUBLIC_SITE_DOMAIN"
+      ]
+    },
+    "web#build": {
+      "env": [
+        "NEXT_PUBLIC_SITE_DOMAIN"
+      ]
+    }
+  }
+}

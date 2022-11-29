@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react';
+import { CoreSizes } from '../../types';
 
-import { CoreSizes } from '../types';
 import { StyledButton } from './styles';
 
 export type ButtonSizes = CoreSizes;

@@ -1,4 +1,4 @@
-import { styled } from '@wenix/stitches';
+import { styled } from '@wenix/ui';
 
 export const FormInputsContainer = styled('div', {
   display: 'flex',

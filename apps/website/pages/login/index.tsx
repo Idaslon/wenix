@@ -1,5 +1,5 @@
 import { LoginPage } from '@wenix/account-login';
-import { SEO } from 'src/components/seo';
+import { SEO } from '../../components/seo';
 
 const _Login = () => {
   return (

@@ -1,4 +1,4 @@
-import { getCssText } from '@wenix/stitches';
+import { getCssText } from '@wenix/ui';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { defaultSEO } from 'src/config/seo';
+import { defaultSEO } from '../config/seo';
 
 type SEOProps = {
   title?: string;

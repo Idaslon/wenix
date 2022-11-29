@@ -1,5 +1,4 @@
-import { spacing, styled } from '@wenix/stitches';
-import { Button, Form, Link, Typography, TypographyBody1 } from '@wenix/core';
+import { Button, Form, Link, spacing, styled, Typography, TypographyBody1 } from '@wenix/ui';
 import { FormInputsContainer } from '../shared/styles';
 
 export const AccountForm = styled(Form, {
