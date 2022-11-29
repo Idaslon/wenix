@@ -5,11 +5,17 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**"]
     },
+    "start": {
+      "cache": false
+    },
     "dev": {
       "cache": false
     },
     "lint": {
       "outputs": []
+    },
+    "clean": {
+      "cache": false
     },
     "deploy": {
       "dependsOn": ["build", "test", "lint"],

@@ -11,7 +11,6 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@stitches/react": "^1.2.8",
     "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -20,19 +19,9 @@
     "@wenix/account": "*"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.2",
-    "@storybook/addon-actions": "^6.5.13",
-    "@storybook/addon-essentials": "^6.5.13",
-    "@storybook/addon-interactions": "^6.5.13",
-    "@storybook/addon-links": "^6.5.13",
-    "@storybook/builder-webpack5": "^6.5.13",
-    "@storybook/manager-webpack5": "^6.5.13",
-    "@storybook/react": "^6.5.13",
-    "@storybook/testing-library": "^0.0.13",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
-    "babel-loader": "^8.3.0",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
     "eslint-config-prettier": "^8.5.0",
