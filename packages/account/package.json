@@ -3,11 +3,13 @@
   "main": "./index.ts",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@wenix/ui": "*",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-icons": "^4.6.0"
+  },
+  "dependencies": {
+    "@wenix/ui": "*"
   },
   "devDependencies": {
     "@types/node": "18.11.9",
