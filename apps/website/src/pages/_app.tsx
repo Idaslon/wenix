@@ -1,4 +1,4 @@
-import '../styles/global.css';
+import '@wenix/ui/styles/global.css';
 
 import type { AppProps } from 'next/app';
 

@@ -1,6 +1,6 @@
 import { themes } from '@storybook/theming'
 
-import '../src/styles/global.css'
+import '@wenix/ui/styles/global.css'
 // import * as NextImage from "next/image";
 
 // const OriginalNextImage = NextImage.default;

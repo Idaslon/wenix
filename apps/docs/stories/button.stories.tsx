@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Button, ButtonProps } from './button';
+import { Button, ButtonProps } from '@wenix/ui';
 
 export default {
   title: 'Components/Button',
