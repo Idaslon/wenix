@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Form, Input, InputProps } from '@wenix/ui';
+import { EXCLUDED_ARG_TYPES } from '../stories-helpers';
 
 export default {
   title: 'Components/Input',
@@ -8,9 +9,7 @@ export default {
     placeholder: 'Enter information here',
   },
   argTypes: {
-    as: { table: { disable: true } },
-    ref: { table: { disable: true } },
-    css: { table: { disable: true } },
+    ...EXCLUDED_ARG_TYPES,
   },
   decorators: [
     (Story) => {

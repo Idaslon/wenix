@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Typography, TypographyProps } from '@wenix/ui';
 
+import { EXCLUDED_ARG_TYPES } from '../stories-helpers';
+
 export default {
   title: 'Components/Typography',
   component: Typography,
@@ -12,10 +14,10 @@ export default {
       name: 'Text',
     },
     size: {
+      defaultValue: 'medium',
       control: { type: 'inline-radio' },
     },
-    as: { table: { disable: true } },
-    css: { table: { disable: true } },
+    ...EXCLUDED_ARG_TYPES,
   },
 } as Meta<TypographyProps>;
 

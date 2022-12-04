@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Link, LinkProps } from '@wenix/ui';
 
+import { EXCLUDED_ARG_TYPES } from '../stories-helpers';
+
 export default {
   title: 'Components/Link',
   component: Link,
@@ -26,8 +28,7 @@ export default {
     prefetch: { table: { disable: true } },
     locale: { table: { disable: true } },
     legacyBehavior: { table: { disable: true } },
-    as: { table: { disable: true } },
-    css: { table: { disable: true } },
+    ...EXCLUDED_ARG_TYPES,
   },
 } as Meta<LinkProps>;
 

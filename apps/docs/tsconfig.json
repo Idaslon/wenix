@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["**/*.stories.tsx"],
+  "include": ["**/*.stories.tsx", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "storybook-static"]
 }
