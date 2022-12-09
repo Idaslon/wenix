@@ -25,7 +25,17 @@ describe('Login', () => {
     expect(loginResponse.user.email).toBe('john@example.com')
   })
 
-  it('should have correct token', async () => {
+  it('should not login with an user that does not exists', async () => {
+    const usersRepository = new InMemoryUsersRepository()
+    const login = new Login(usersRepository)
+
+    expect(login.execute({
+      email: 'john@example.com',
+      password: '123'
+    })).rejects.toBeInstanceOf(Error)
+  })
+
+  it('should not login with wrong user password', async () => {
     const usersRepository = new InMemoryUsersRepository()
     const createUser = new CreateUser(usersRepository)
     const login = new Login(usersRepository)
@@ -36,12 +46,9 @@ describe('Login', () => {
       password: '123'
     })
 
-    const loginResponse = await login.execute({
+    expect(login.execute({
       email: 'john@example.com',
-      password: '123'
-    })
-
-    expect(loginResponse.user.name).toBe('John')
-    expect(loginResponse.user.email).toBe('john@example.com')
+      password: '1234'
+    })).rejects.toBeInstanceOf(Error)
   })
 })
