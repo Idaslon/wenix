@@ -15,17 +15,13 @@ export interface LoginResponse {
 }
 
 export class Login {
-  private usersRepository: UsersRepository
-  private authService: AuthService
   private encryptionService: EncryptionService
 
   constructor(
-    usersRepository: UsersRepository,
-    authService: AuthService,
+    private usersRepository: UsersRepository,
+    private authService: AuthService,
     encryptionService?: EncryptionService
   ){
-    this.usersRepository = usersRepository
-    this.authService = authService
     this.encryptionService = encryptionService || new BaseEncryptionService()
   }
 

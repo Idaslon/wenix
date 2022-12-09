@@ -31,5 +31,4 @@ export class User {
 }
 
 // Zod
-// Password
 // Lint

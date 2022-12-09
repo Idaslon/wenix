@@ -12,14 +12,12 @@ interface CreateUserRequest {
 type CreateUserResponse = User
 
 export class CreateUser {
-  private usersRepository: UsersRepository
   private encryptionService: EncryptionService
 
   constructor(
-    usersRepository: UsersRepository,
+    private usersRepository: UsersRepository,
     encryptionService?: EncryptionService
   ) {
-    this.usersRepository = usersRepository
     this.encryptionService = encryptionService || new BaseEncryptionService()
   }
 
