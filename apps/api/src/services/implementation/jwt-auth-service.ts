@@ -1,6 +1,6 @@
 import { sign, verify } from 'jsonwebtoken';
-import { authConfig } from '../config/auth';
-import { AuthPayload, AuthService } from './auth-service';
+import { authConfig } from '../../config/auth';
+import { AuthPayload, AuthService } from '../auth-service';
 
 export class JWTAuthService implements AuthService {
   generateToken(payload: AuthPayload): string {
@@ -24,5 +24,4 @@ export class JWTAuthService implements AuthService {
       email: tokenDecoded.email
     }
   }
-
 }

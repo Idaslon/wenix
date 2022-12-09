@@ -15,6 +15,10 @@ export class User {
     return this.props.email;
   }
 
+  get password () {
+    return this.props.password;
+  }
+
   constructor(props: UserProps) {
     const { name, email, password } = props
 
@@ -24,8 +28,8 @@ export class User {
 
     this.props = props
   }
-
-  public validatePassword(password: string) {
-    return this.props.password === password
-  }
 }
+
+// Zod
+// Password
+// Lint

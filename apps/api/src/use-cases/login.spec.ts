@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { InMemoryUsersRepository } from "../repositories/in-memory/users-repository";
-import { JWTAuthService } from "../services/jwt-auth-service";
+import { JWTAuthService } from "../services/implementation/jwt-auth-service";
 import { CreateUser } from "./create-user";
 
 import { Login } from './login'

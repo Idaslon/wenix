@@ -1,6 +1,8 @@
 import { User } from "../entities/user"
 import { UsersRepository } from "../repositories/users-repository"
 import { AuthService } from "../services/auth-service"
+import { EncryptionService } from "../services/encryption-service"
+import { BaseEncryptionService } from "../services/implementation/base-encryption-service"
 
 export interface LoginRequest {
   email: string
@@ -13,10 +15,19 @@ export interface LoginResponse {
 }
 
 export class Login {
+  private usersRepository: UsersRepository
+  private authService: AuthService
+  private encryptionService: EncryptionService
+
   constructor(
-    private usersRepository: UsersRepository,
-    private authService: AuthService
-  ){}
+    usersRepository: UsersRepository,
+    authService: AuthService,
+    encryptionService?: EncryptionService
+  ){
+    this.usersRepository = usersRepository
+    this.authService = authService
+    this.encryptionService = encryptionService || new BaseEncryptionService()
+  }
 
   async execute(request: LoginRequest): Promise<LoginResponse> {
     const { email, password } = request
@@ -27,7 +38,7 @@ export class Login {
       throw new Error('User not found')
     }
 
-    const isPasswordCorrect = user.validatePassword(password)
+    const isPasswordCorrect = await this.encryptionService.comparePassword(password, user.password)
 
     if (!isPasswordCorrect) {
       throw new Error('Passwords does not match')
