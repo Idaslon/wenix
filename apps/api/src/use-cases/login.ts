@@ -1,5 +1,6 @@
 import { User } from "../entities/user"
 import { UsersRepository } from "../repositories/users-repository"
+import { AuthService } from "../services/auth-service"
 
 export interface LoginRequest {
   email: string
@@ -13,7 +14,8 @@ export interface LoginResponse {
 
 export class Login {
   constructor(
-    private usersRepository: UsersRepository
+    private usersRepository: UsersRepository,
+    private authService: AuthService
   ){}
 
   async execute(request: LoginRequest): Promise<LoginResponse> {
@@ -31,9 +33,11 @@ export class Login {
       throw new Error('Passwords does not match')
     }
 
+    const token = this.authService.generateToken({ email: user.email })
+
     return {
       user,
-      token: ''
+      token
     }
   }
 }

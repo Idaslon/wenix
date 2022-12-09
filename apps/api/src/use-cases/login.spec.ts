@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { InMemoryUsersRepository } from "../repositories/in-memory/users-repository";
+import { JWTAuthService } from "../services/jwt-auth-service";
 import { CreateUser } from "./create-user";
 
 import { Login } from './login'
@@ -7,8 +8,10 @@ import { Login } from './login'
 describe('Login', () => {
   it('should be able to login an user', async () => {
     const usersRepository = new InMemoryUsersRepository()
+    const jwtAuthService = new JWTAuthService()
+
     const createUser = new CreateUser(usersRepository)
-    const login = new Login(usersRepository)
+    const login = new Login(usersRepository, jwtAuthService)
 
     await createUser.execute({
       name: 'John',
@@ -27,7 +30,10 @@ describe('Login', () => {
 
   it('should not login with an user that does not exists', async () => {
     const usersRepository = new InMemoryUsersRepository()
-    const login = new Login(usersRepository)
+    const jwtAuthService = new JWTAuthService()
+
+    const login = new Login(usersRepository, jwtAuthService)
+
 
     expect(login.execute({
       email: 'john@example.com',
@@ -37,8 +43,10 @@ describe('Login', () => {
 
   it('should not login with wrong user password', async () => {
     const usersRepository = new InMemoryUsersRepository()
+    const jwtAuthService = new JWTAuthService()
+
     const createUser = new CreateUser(usersRepository)
-    const login = new Login(usersRepository)
+    const login = new Login(usersRepository, jwtAuthService)
 
     await createUser.execute({
       name: 'John',
