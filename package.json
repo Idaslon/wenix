@@ -10,7 +10,8 @@
     "build": "turbo run build",
     "start": "turbo run start",
     "lint": "turbo run lint",
-    "clean": "turbo run clean"
+    "clean": "turbo run clean",
+    "test": "turbo run test"
   },
   "devDependencies": {
     "eslint": "8.28.0",

@@ -15,6 +15,9 @@
     "dev": {
       "cache": false
     },
+    "test": {
+      "cache": false
+    },
     "lint": {
       "outputs": []
     },

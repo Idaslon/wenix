@@ -1,6 +1,7 @@
 export interface UserProps {
   name: string;
   email: string;
+  password: string;
 }
 
 export class User {
@@ -15,11 +16,16 @@ export class User {
   }
 
   constructor(props: UserProps) {
-    const { name, email } = props
+    const { name, email, password } = props
 
     if (!name) throw new Error('User must have a name')
     if (!email) throw new Error('User must have an email')
+    if (!password) throw new Error('User must have a password')
 
     this.props = props
+  }
+
+  public validatePassword(password: string) {
+    return this.props.password === password
   }
 }

@@ -4,6 +4,7 @@ import { UsersRepository } from "../repositories/users-repository"
 interface CreateUserRequest {
   name: string
   email: string
+  password: string
 }
 
 type CreateUserResponse = User
@@ -14,7 +15,7 @@ export class CreateUser {
   ) {}
 
   async execute(request: CreateUserRequest): Promise<CreateUserResponse> {
-    const { name, email } = request
+    const { name, email, password } = request
 
     const userExists = await this.usersRepository.findUserByEmail(email)
 
@@ -24,7 +25,8 @@ export class CreateUser {
 
     const user = new User({
       name,
-      email
+      email,
+      password
     })
 
     this.usersRepository.create(user)

@@ -10,7 +10,8 @@ describe('Create User', () => {
 
     expect(createUser.execute({
       name: 'John',
-      email: 'john@example.com'
+      email: 'john@example.com',
+      password: '123'
     })).resolves.toBeInstanceOf(User)
   })
 
@@ -20,12 +21,14 @@ describe('Create User', () => {
 
     await createUser.execute({
       name: 'John',
-      email: 'john@example.com'
+      email: 'john@example.com',
+      password: '123'
     })
 
     expect(createUser.execute({
       name: 'John 2',
-      email: 'john@example.com'
+      email: 'john@example.com',
+      password: '123'
     })).rejects.toBeInstanceOf(Error)
   })
 })
