@@ -60,3 +60,27 @@ describe('Login', () => {
     })).rejects.toBeInstanceOf(Error)
   })
 })
+
+describe('JWT Login', () => {
+  it('should have correct token', async () => {
+    const usersRepository = new InMemoryUsersRepository()
+    const jwtAuthService = new JWTAuthService()
+
+    const createUser = new CreateUser(usersRepository)
+    const login = new Login(usersRepository, jwtAuthService)
+
+    await createUser.execute({
+      name: 'John',
+      email: 'john@example.com',
+      password: '123'
+    })
+
+    const loginResponse = await login.execute({
+      email: 'john@example.com',
+      password: '123'
+    })
+
+    // TODO: Improve these tests with mocked data and spy functions
+    expect(jwtAuthService.validateToken(loginResponse.token)).toStrictEqual({ email: 'john@example.com' })
+  })
+})

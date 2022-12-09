@@ -1,4 +1,8 @@
+export interface AuthPayload {
+  email: string
+}
+
 export interface AuthService {
-  generateToken(payload: any): string
-  validateToken(token: string): string
+  generateToken(payload: AuthPayload): string
+  validateToken(token: string): AuthPayload
 }

@@ -1,11 +1,9 @@
 import { sign, verify } from 'jsonwebtoken';
 import { authConfig } from '../config/auth';
-import { AuthService } from './auth-service';
+import { AuthPayload, AuthService } from './auth-service';
 
 export class JWTAuthService implements AuthService {
-  generateToken(payload: any): string {
-    console.log(authConfig);
-
+  generateToken(payload: AuthPayload): string {
     const token = sign(
       payload,
       authConfig.secret,
@@ -15,9 +13,16 @@ export class JWTAuthService implements AuthService {
     return token
   }
 
-  validateToken(token: string): string {
+  validateToken(token: string): AuthPayload {
     const tokenDecoded = verify(token, authConfig.secret)
-    return tokenDecoded as any
+
+    if (typeof tokenDecoded === 'string' || !tokenDecoded.email) {
+      throw new Error('Invalid token')
+    }
+
+    return {
+      email: tokenDecoded.email
+    }
   }
 
 }
