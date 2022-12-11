@@ -1,21 +1,21 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { defaultSEO } from '../config/seo';
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { defaultSEO } from '../config/seo'
 
 type SEOProps = {
-  title?: string;
-  description?: string;
-};
+  title?: string
+  description?: string
+}
 
 export const SEO = ({ title, description }: SEOProps) => {
-  const router = useRouter();
+  const router = useRouter()
 
-  const { title: defaultTitle, description: defaultDescription, domain, lang, image } = defaultSEO;
+  const { title: defaultTitle, description: defaultDescription, domain, lang, image } = defaultSEO
 
   const theme = {
     contentColor: 'hsl(180, 4%, 5%)',
     titleColor: 'hsl(0, 0%, 100%)',
-  };
+  }
 
   const seo = {
     lang,
@@ -24,7 +24,7 @@ export const SEO = ({ title, description }: SEOProps) => {
     url: `https://${domain}${router.pathname}`,
     image,
     domain,
-  };
+  }
 
   return (
     <Head>
@@ -53,5 +53,5 @@ export const SEO = ({ title, description }: SEOProps) => {
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
     </Head>
-  );
-};
+  )
+}
