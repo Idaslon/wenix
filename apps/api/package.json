@@ -6,7 +6,7 @@
   "author": "Idaslon",
   "repository": "https://github.com/idaslon/wenix",
   "scripts": {
-    "start": "node ./dist/index.js",
+    "start": "node ./dist/src/index.js",
     "build": "tsc",
     "dev": "tsnd --respawn --transpile-only src/index.ts",
     "test": "vitest",

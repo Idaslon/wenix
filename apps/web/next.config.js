@@ -5,6 +5,6 @@ const nextConfig = {
   experimental: {
     transpilePackages: ['@wenix/ui'],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

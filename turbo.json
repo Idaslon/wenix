@@ -31,13 +31,15 @@
     "api#dev": {
       "env": [
         "AUTH_SECRET",
-        "ENCRYPTION_SALT"
+        "ENCRYPTION_SALT",
+        "SERVER_PORT"
       ]
     },
     "api#build": {
       "env": [
         "AUTH_SECRET",
-        "ENCRYPTION_SALT"
+        "ENCRYPTION_SALT",
+        "SERVER_PORT"
       ]
     },
     "web#dev": {
