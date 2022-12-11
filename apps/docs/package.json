@@ -5,12 +5,13 @@
   "private": true,
   "scripts": {
     "dev": "start-storybook -p 6006",
-    "build": "build-storybook"
+    "build": "build-storybook",
+    "start": "http-server ./storybook-static -p 6006"
   },
   "dependencies": {
+    "@wenix/ui": "*",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "@wenix/ui": "*"
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
@@ -23,8 +24,9 @@
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
-    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "eslint-config-custom": "*",
+    "http-server": "^14.1.1",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "4.9.3"
   }
 }
