@@ -1,17 +1,4 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:prettier/recommended",
-    "turbo"
-  ],
-  "plugins": [
-    "react-hooks",
-    "prettier"
-  ],
-  "rules": {
-    "prettier/prettier": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/display-name": "off"
-  }
+  "root": true,
+  "extends": ["custom"]
 }

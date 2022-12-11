@@ -1,7 +1,7 @@
 {
   "name": "@wenix/docs",
   "main": "./index.ts",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "start-storybook -p 6006",
@@ -24,10 +24,7 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
-    "eslint": "8.28.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.0",
+    "eslint-config-custom": "*",
     "typescript": "4.9.3"
   }
 }

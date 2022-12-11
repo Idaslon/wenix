@@ -1,0 +1,13 @@
+{
+  "name": "eslint-config-custom",
+  "main": "./index.js",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "eslint": "8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-turbo": "^0.0.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.0"
+  }
+}
