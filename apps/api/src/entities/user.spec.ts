@@ -1,15 +1,15 @@
-import { expect, test } from 'vitest';
-import { User } from './user';
+import { expect, test } from 'vitest'
+import { User } from './user'
 
 test('create an user', () => {
   const user = new User({
     name: 'John',
     email: 'john@example.com',
     password: '123',
-  });
+  })
 
-  expect(user).toBeInstanceOf(User);
-});
+  expect(user).toBeInstanceOf(User)
+})
 
 test('cannot create an user without name', () => {
   expect(() => {
@@ -17,9 +17,9 @@ test('cannot create an user without name', () => {
       name: undefined as any,
       email: 'john@example.com',
       password: '123',
-    });
-  }).toThrowError();
-});
+    })
+  }).toThrowError()
+})
 
 test('cannot create an user without email', () => {
   expect(() => {
@@ -27,9 +27,9 @@ test('cannot create an user without email', () => {
       name: 'John',
       email: undefined as any,
       password: '123',
-    });
-  }).toThrowError();
-});
+    })
+  }).toThrowError()
+})
 
 test('cannot create an user without password', () => {
   expect(() => {
@@ -37,6 +37,6 @@ test('cannot create an user without password', () => {
       name: 'John',
       email: 'john@example.com',
       password: undefined as any,
-    });
-  }).toThrowError();
-});
+    })
+  }).toThrowError()
+})

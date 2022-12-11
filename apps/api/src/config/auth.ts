@@ -3,4 +3,4 @@ export const authConfig = {
 
   /** Example: "2 days", "10h", "7d". More info: [zeit/ms](https://github.com/zeit/ms.js). */
   expiresIn: '1d',
-};
+}
