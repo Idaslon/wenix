@@ -1,50 +1,50 @@
-import { User } from "../entities/user"
-import { UsersRepository } from "../repositories/users-repository"
-import { AuthService } from "../services/auth-service"
-import { EncryptionService } from "../services/encryption-service"
-import { BaseEncryptionService } from "../services/implementation/base-encryption-service"
+import { User } from '../entities/user';
+import { UsersRepository } from '../repositories/users-repository';
+import { AuthService } from '../services/auth-service';
+import { EncryptionService } from '../services/encryption-service';
+import { BaseEncryptionService } from '../services/implementation/base-encryption-service';
 
 export interface LoginRequest {
-  email: string
-  password: string
+  email: string;
+  password: string;
 }
 
 export interface LoginResponse {
-  user: User
-  token: string
+  user: User;
+  token: string;
 }
 
 export class Login {
-  private encryptionService: EncryptionService
+  private encryptionService: EncryptionService;
 
   constructor(
     private usersRepository: UsersRepository,
     private authService: AuthService,
     encryptionService?: EncryptionService
-  ){
-    this.encryptionService = encryptionService || new BaseEncryptionService()
+  ) {
+    this.encryptionService = encryptionService || new BaseEncryptionService();
   }
 
   async execute(request: LoginRequest): Promise<LoginResponse> {
-    const { email, password } = request
+    const { email, password } = request;
 
-    const user = await this.usersRepository.findUserByEmail(email)
+    const user = await this.usersRepository.findUserByEmail(email);
 
     if (user === null) {
-      throw new Error('User not found')
+      throw new Error('User not found');
     }
 
-    const isPasswordCorrect = await this.encryptionService.comparePassword(password, user.password)
+    const isPasswordCorrect = await this.encryptionService.comparePassword(password, user.password);
 
     if (!isPasswordCorrect) {
-      throw new Error('Passwords does not match')
+      throw new Error('Passwords does not match');
     }
 
-    const token = this.authService.generateToken({ email: user.email })
+    const token = this.authService.generateToken({ email: user.email });
 
     return {
       user,
-      token
-    }
+      token,
+    };
   }
 }

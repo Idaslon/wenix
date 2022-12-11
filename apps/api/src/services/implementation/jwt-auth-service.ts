@@ -4,24 +4,20 @@ import { AuthPayload, AuthService } from '../auth-service';
 
 export class JWTAuthService implements AuthService {
   generateToken(payload: AuthPayload): string {
-    const token = sign(
-      payload,
-      authConfig.secret,
-      { expiresIn: authConfig.expiresIn }
-    )
+    const token = sign(payload, authConfig.secret, { expiresIn: authConfig.expiresIn });
 
-    return token
+    return token;
   }
 
   validateToken(token: string): AuthPayload {
-    const tokenDecoded = verify(token, authConfig.secret)
+    const tokenDecoded = verify(token, authConfig.secret);
 
     if (typeof tokenDecoded === 'string' || !tokenDecoded.email) {
-      throw new Error('Invalid token')
+      throw new Error('Invalid token');
     }
 
     return {
-      email: tokenDecoded.email
-    }
+      email: tokenDecoded.email,
+    };
   }
 }

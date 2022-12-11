@@ -28,6 +28,18 @@
       "dependsOn": ["build", "test", "lint"],
       "outputs": []
     },
+    "api#dev": {
+      "env": [
+        "AUTH_SECRET",
+        "ENCRYPTION_SALT"
+      ]
+    },
+    "api#build": {
+      "env": [
+        "AUTH_SECRET",
+        "ENCRYPTION_SALT"
+      ]
+    },
     "web#dev": {
       "env": [
         "NEXT_PUBLIC_SITE_DOMAIN"

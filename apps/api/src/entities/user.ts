@@ -7,26 +7,26 @@ export interface UserProps {
 export class User {
   private readonly props: UserProps;
 
-  get name () {
+  get name() {
     return this.props.name;
   }
 
-  get email () {
+  get email() {
     return this.props.email;
   }
 
-  get password () {
+  get password() {
     return this.props.password;
   }
 
   constructor(props: UserProps) {
-    const { name, email, password } = props
+    const { name, email, password } = props;
 
-    if (!name) throw new Error('User must have a name')
-    if (!email) throw new Error('User must have an email')
-    if (!password) throw new Error('User must have a password')
+    if (!name) throw new Error('User must have a name');
+    if (!email) throw new Error('User must have an email');
+    if (!password) throw new Error('User must have a password');
 
-    this.props = props
+    this.props = props;
   }
 }
 
