@@ -1,7 +1,7 @@
-import { FormHTMLAttributes } from 'react';
-import { StyledForm } from './styles';
+import { FormHTMLAttributes } from 'react'
+import { StyledForm } from './styles'
 
-export type FormProps = FormHTMLAttributes<HTMLFormElement>;
-export type FormRef = HTMLFormElement;
+export type FormProps = FormHTMLAttributes<HTMLFormElement>
+export type FormRef = HTMLFormElement
 
-export const Form = StyledForm;
+export const Form = StyledForm

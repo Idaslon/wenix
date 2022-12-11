@@ -1,5 +1,5 @@
-import { default as NextLink } from 'next/link';
-import { styled } from '../../stitches.config';
+import { default as NextLink } from 'next/link'
+import { styled } from '../../stitches.config'
 
 export const StyledLink = styled(NextLink, {
   color: '$common-white',
@@ -10,4 +10,4 @@ export const StyledLink = styled(NextLink, {
   '&:hover, &:focus': {
     textDecoration: 'underline',
   },
-});
+})

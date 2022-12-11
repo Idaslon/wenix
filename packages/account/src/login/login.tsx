@@ -1,5 +1,5 @@
-import { Input, Typography } from '@wenix/ui';
-import { CreateAccountText, InputsContainer, LoginButton, StyledForm, LoginLink } from './styles';
+import { Input, Typography } from '@wenix/ui'
+import { CreateAccountText, InputsContainer, LoginButton, StyledForm, LoginLink } from './styles'
 
 export const LoginForm = () => {
   return (
@@ -19,5 +19,5 @@ export const LoginForm = () => {
         Do not have an account? <LoginLink href="/create-account">Create one</LoginLink>
       </CreateAccountText>
     </StyledForm>
-  );
-};
+  )
+}

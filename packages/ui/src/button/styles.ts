@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config';
+import { styled } from '../../stitches.config'
 
 export const StyledButton = styled('button', {
   color: '$common-white',
@@ -69,4 +69,4 @@ export const StyledButton = styled('button', {
       },
     },
   },
-});
+})

@@ -1,4 +1,4 @@
-import { spacing, styled } from '../../stitches.config';
+import { spacing, styled } from '../../stitches.config'
 
 export const StyledForm = styled('form', {
   display: 'flex',
@@ -13,4 +13,4 @@ export const StyledForm = styled('form', {
   borderColor: '$stroke',
 
   backgroundColor: '$black600',
-});
+})

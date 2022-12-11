@@ -1,7 +1,7 @@
-import { CSS } from '@stitches/react';
-import React from 'react';
-import { HTMLAttributes } from 'react';
-import { CoreSizes } from '../../types';
+import { CSS } from '@stitches/react'
+import React from 'react'
+import { HTMLAttributes } from 'react'
+import { CoreSizes } from '../../types'
 import {
   TypographyBody1,
   TypographyBody2,
@@ -10,21 +10,21 @@ import {
   TypographyH3,
   TypographySubtitle1,
   TypographySubtitle2,
-} from './styles';
+} from './styles'
 
-export type TypographyVariants = 'h1' | 'h2' | 'h3' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2';
-export type TypographySizes = CoreSizes;
+export type TypographyVariants = 'h1' | 'h2' | 'h3' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2'
+export type TypographySizes = CoreSizes
 
 export interface TypographyProps extends HTMLAttributes<HTMLSpanElement> {
-  as?: React.ElementType;
-  css?: CSS;
+  as?: React.ElementType
+  css?: CSS
 
-  variant: TypographyVariants;
-  size?: TypographySizes;
+  variant: TypographyVariants
+  size?: TypographySizes
 }
 
 // TODO: Find a way to improve this
-export type TypographyRef = HTMLParagraphElement;
+export type TypographyRef = HTMLParagraphElement
 
 const elementsBridge = {
   h1: {
@@ -55,14 +55,14 @@ const elementsBridge = {
     className: 'typography-body2',
     Element: TypographyBody2,
   },
-};
+}
 
 export const Typography = ({ variant, size, children, ...rest }: TypographyProps) => {
-  const { Element, className } = elementsBridge[variant];
+  const { Element, className } = elementsBridge[variant]
 
   return (
     <Element className={className} size={size || 'medium'} {...rest}>
       {children}
     </Element>
-  );
-};
+  )
+}

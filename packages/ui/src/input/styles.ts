@@ -1,4 +1,4 @@
-import { spacing, styled } from '../../stitches.config';
+import { spacing, styled } from '../../stitches.config'
 
 export const StyledInput = styled('input', {
   paddingBlock: spacing(4.5),
@@ -35,4 +35,4 @@ export const StyledInput = styled('input', {
   '&:focus': {
     borderColor: '$primary400',
   },
-});
+})

@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config';
+import { styled } from '../../stitches.config'
 
 export const TypographyH1 = styled('h1', {
   fontWeight: 700,
@@ -16,7 +16,7 @@ export const TypographyH1 = styled('h1', {
       },
     },
   },
-});
+})
 
 export const TypographyH2 = styled('h2', {
   fontWeight: 400,
@@ -29,7 +29,7 @@ export const TypographyH2 = styled('h2', {
       large: {},
     },
   },
-});
+})
 
 export const TypographyH3 = styled('h3', {
   fontWeight: 300,
@@ -42,7 +42,7 @@ export const TypographyH3 = styled('h3', {
       large: {},
     },
   },
-});
+})
 
 export const TypographySubtitle1 = styled('h3', {
   fontWeight: 400,
@@ -55,7 +55,7 @@ export const TypographySubtitle1 = styled('h3', {
       large: {},
     },
   },
-});
+})
 
 export const TypographySubtitle2 = styled('h4', {
   fontWeight: 500,
@@ -68,7 +68,7 @@ export const TypographySubtitle2 = styled('h4', {
       large: {},
     },
   },
-});
+})
 
 export const TypographyBody1 = styled('p', {
   fontWeight: 500,
@@ -83,7 +83,7 @@ export const TypographyBody1 = styled('p', {
       large: {},
     },
   },
-});
+})
 
 export const TypographyBody2 = styled('span', {
   fontWeight: 400,
@@ -96,4 +96,4 @@ export const TypographyBody2 = styled('span', {
       large: {},
     },
   },
-});
+})

@@ -1,4 +1,4 @@
-import { styled } from '@wenix/ui';
+import { styled } from '@wenix/ui'
 
 export const FormInputsContainer = styled('div', {
   display: 'flex',
@@ -6,4 +6,4 @@ export const FormInputsContainer = styled('div', {
   rowGap: '$5',
 
   width: '100%',
-});
+})

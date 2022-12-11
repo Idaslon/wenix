@@ -1,6 +1,6 @@
-import React from 'react';
-import { Input, Typography } from '@wenix/ui';
-import { FiArrowLeft } from 'react-icons/fi';
+import React from 'react'
+import { Input, Typography } from '@wenix/ui'
+import { FiArrowLeft } from 'react-icons/fi'
 
 import {
   AccountButton,
@@ -12,7 +12,7 @@ import {
   MarketingDescription,
   MarketingText,
   SideContainer,
-} from './styles';
+} from './styles'
 
 export const CreateAccountForm = () => {
   return (
@@ -47,5 +47,5 @@ export const CreateAccountForm = () => {
         </LoginLink>
       </SideContainer>
     </AccountForm>
-  );
-};
+  )
+}

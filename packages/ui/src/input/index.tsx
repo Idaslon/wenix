@@ -1,7 +1,7 @@
-import { InputHTMLAttributes } from 'react';
-import { StyledInput } from './styles';
+import { InputHTMLAttributes } from 'react'
+import { StyledInput } from './styles'
 
-export type InputProps = InputHTMLAttributes<HTMLInputElement>;
-export type InputRef = HTMLInputElement;
+export type InputProps = InputHTMLAttributes<HTMLInputElement>
+export type InputRef = HTMLInputElement
 
-export const Input = StyledInput;
+export const Input = StyledInput
