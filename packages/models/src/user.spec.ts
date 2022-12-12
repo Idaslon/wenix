@@ -1,42 +1,46 @@
 import { expect, test } from 'vitest'
-import { User } from './user'
+import { createUser } from './user'
 
 test('create an user', () => {
-  const user = new User({
+  expect(
+    createUser({
+      name: 'John',
+      email: 'john@example.com',
+      password: '123456',
+    })
+  ).toStrictEqual({
     name: 'John',
     email: 'john@example.com',
-    password: '123',
+    password: '123456',
   })
-
-  expect(user).toBeInstanceOf(User)
 })
 
 test('cannot create an user without name', () => {
-  expect(() => {
-    return new User({
+  expect(() =>
+    createUser({
       name: undefined as any,
       email: 'john@example.com',
-      password: '123',
+      password: '123456',
     })
-  }).toThrowError()
+  ).toThrowError()
 })
 
 test('cannot create an user without email', () => {
-  expect(() => {
-    return new User({
+  expect(() =>
+    createUser({
       name: 'John',
       email: undefined as any,
-      password: '123',
+      password: '123456',
     })
-  }).toThrowError()
+  ).toThrowError()
 })
 
 test('cannot create an user without password', () => {
-  expect(() => {
-    return new User({
+  expect(() =>
+    createUser({
       name: 'John',
       email: 'john@example.com',
       password: undefined as any,
     })
-  }).toThrowError()
+  ).toThrowError()
 })
