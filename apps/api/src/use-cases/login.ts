@@ -1,4 +1,4 @@
-import { User } from '../entities/user'
+import { User } from '@wenix/models'
 import { UsersRepository } from '../repositories/users-repository'
 import { AuthService } from '../services/auth-service'
 import { EncryptionService } from '../services/encryption-service'

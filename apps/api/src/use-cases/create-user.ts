@@ -1,4 +1,4 @@
-import { User } from '../entities/user'
+import { createUser, User, validateUser } from '@wenix/models'
 import { UsersRepository } from '../repositories/users-repository'
 import { EncryptionService } from '../services/encryption-service'
 import { BaseEncryptionService } from '../services/implementation/base-encryption-service'
@@ -21,6 +21,12 @@ export class CreateUser {
   async execute(request: CreateUserRequest): Promise<CreateUserResponse> {
     const { name, email, password } = request
 
+    validateUser({
+      name,
+      email,
+      password,
+    })
+
     const userExists = await this.usersRepository.findUserByEmail(email)
 
     if (userExists !== null) {
@@ -29,7 +35,7 @@ export class CreateUser {
 
     const encryptedPassword = await this.encryptionService.hashPassword(password)
 
-    const user = new User({
+    const user = createUser({
       name,
       email,
       password: encryptedPassword,

@@ -1,4 +1,4 @@
-import { User } from '../entities/user'
+import { User } from '@wenix/models'
 
 export interface UsersRepository {
   create(user: User): Promise<void>

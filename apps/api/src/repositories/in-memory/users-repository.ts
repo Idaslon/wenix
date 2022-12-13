@@ -1,4 +1,4 @@
-import { User } from '../../entities/user'
+import { User } from '@wenix/models'
 import { UsersRepository } from '../users-repository'
 
 export class InMemoryUsersRepository implements UsersRepository {

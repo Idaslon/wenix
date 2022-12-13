@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest'
-import { User } from '../entities/user'
 import { InMemoryUsersRepository } from '../repositories/in-memory/users-repository'
 import { CreateUser } from './create-user'
 
@@ -12,9 +11,9 @@ describe('Create User', () => {
       createUser.execute({
         name: 'John',
         email: 'john@example.com',
-        password: '123',
+        password: '123456',
       })
-    ).resolves.toBeInstanceOf(User)
+    ).resolves
   })
 
   it('should not be able to create an user with an email that already exists', async () => {
@@ -24,14 +23,14 @@ describe('Create User', () => {
     await createUser.execute({
       name: 'John',
       email: 'john@example.com',
-      password: '123',
+      password: '123456',
     })
 
     expect(
       createUser.execute({
         name: 'John 2',
         email: 'john@example.com',
-        password: '123',
+        password: '123456',
       })
     ).rejects.toBeInstanceOf(Error)
   })

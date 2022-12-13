@@ -7,7 +7,14 @@ const userSchema = z.object({
 })
 
 export type CreateUserProps = z.infer<typeof userSchema>
+export type ValidateUserProps = z.infer<typeof userSchema>
+
 export type User = z.infer<typeof userSchema>
+
+export function validateUser(props: ValidateUserProps) {
+  userSchema.parse(props)
+  return true
+}
 
 export function createUser(props: CreateUserProps) {
   const user = userSchema.parse(props)

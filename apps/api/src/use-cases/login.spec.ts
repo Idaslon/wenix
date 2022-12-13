@@ -16,12 +16,12 @@ describe('Login', () => {
     await createUser.execute({
       name: 'John',
       email: 'john@example.com',
-      password: '123',
+      password: '123456',
     })
 
     const loginResponse = await login.execute({
       email: 'john@example.com',
-      password: '123',
+      password: '123456',
     })
 
     expect(loginResponse.user.name).toBe('John')
@@ -37,7 +37,7 @@ describe('Login', () => {
     expect(
       login.execute({
         email: 'john@example.com',
-        password: '123',
+        password: '123456',
       })
     ).rejects.toBeInstanceOf(Error)
   })
@@ -52,13 +52,13 @@ describe('Login', () => {
     await createUser.execute({
       name: 'John',
       email: 'john@example.com',
-      password: '123',
+      password: '123456',
     })
 
     expect(
       login.execute({
         email: 'john@example.com',
-        password: '1234',
+        password: '1234567',
       })
     ).rejects.toBeInstanceOf(Error)
   })
@@ -75,12 +75,12 @@ describe('JWT Login', () => {
     await createUser.execute({
       name: 'John',
       email: 'john@example.com',
-      password: '123',
+      password: '123456',
     })
 
     const loginResponse = await login.execute({
       email: 'john@example.com',
-      password: '123',
+      password: '123456',
     })
 
     // TODO: Improve these tests with mocked data and spy functions
