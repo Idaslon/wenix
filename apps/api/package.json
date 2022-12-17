@@ -21,7 +21,7 @@
     "prisma": "^4.7.1"
   },
   "devDependencies": {
-   "@types/node": "18.11.9",
+    "@types/node": "18.11.9",
     "@types/bcrypt": "^5.0.0",
     "@types/jsonwebtoken": "^8.5.9",
     "@typescript-eslint/eslint-plugin": "^5.46.0",

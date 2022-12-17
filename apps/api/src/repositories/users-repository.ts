@@ -1,6 +1,6 @@
-import { User } from '@wenix/models'
+import { CreateUserProps, User } from '@wenix/models'
 
 export interface UsersRepository {
-  create(user: User): Promise<void>
+  create(user: CreateUserProps): Promise<User>
   findUserByEmail(email: string): Promise<User | null>
 }
