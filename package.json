@@ -1,27 +1,25 @@
 {
   "private": true,
   "repository": "https://github.com/Idaslon/wenix.git",
-  "workspaces": [
-    "packages/**/*",
-    "apps/**/*"
-  ],
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
     "start": "turbo run start",
     "lint": "turbo run lint",
     "clean": "turbo run clean",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "preinstall": "npx only-allow pnpm"
   },
   "devDependencies": {
     "eslint": "8.28.0",
-    "eslint-config-custom": "*",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
     "prettier": "^2.8.0",
     "turbo": "^1.6.3"
   },
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "pnpm@7.18.2",
   "engines": {
-    "npm": ">=8.0.0",
+    "pnpm": ">=7.18.0",
     "node": ">=18.12.0"
   }
 }

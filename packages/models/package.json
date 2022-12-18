@@ -15,9 +15,8 @@
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "@vitest/coverage-c8": "^0.25.6",
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
-    "typescript": "4.9.3",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
     "vitest": "^0.25.3"
   }
 }

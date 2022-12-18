@@ -9,7 +9,7 @@
     "start": "http-server ./storybook-static -p 6006"
   },
   "dependencies": {
-    "@wenix/ui": "*",
+    "@wenix/ui": "workspace:*",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
@@ -24,9 +24,9 @@
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
-    "eslint-config-custom": "*",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
     "http-server": "^14.1.1",
-    "tsconfig-paths-webpack-plugin": "^4.0.0",
-    "typescript": "4.9.3"
+    "tsconfig-paths-webpack-plugin": "^4.0.0"
   }
 }

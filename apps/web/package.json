@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@wenix/account": "*",
-    "@wenix/ui": "*",
+    "@wenix/account": "workspace:*",
+    "@wenix/ui": "workspace:*",
     "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -20,8 +20,7 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
-    "typescript": "4.9.3"
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
   }
 }
