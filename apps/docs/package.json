@@ -11,7 +11,8 @@
   "dependencies": {
     "@wenix/ui": "workspace:*",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-icons": "^4.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
@@ -25,8 +26,8 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
     "eslint-config-custom": "workspace:*",
-    "tsconfig": "workspace:*",
     "http-server": "^14.1.1",
+    "tsconfig": "workspace:*",
     "tsconfig-paths-webpack-plugin": "^4.0.0"
   }
 }

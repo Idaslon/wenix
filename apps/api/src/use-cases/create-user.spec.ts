@@ -1,8 +1,16 @@
-import { describe, expect, it } from 'vitest'
+import { beforeAll, describe, expect, it } from 'vitest'
 import { InMemoryUsersRepository } from '../repositories/in-memory/users-repository'
 import { CreateUser } from './create-user'
 
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
 describe('Create User', () => {
+  beforeAll(async () => {
+    await prisma.user.deleteMany()
+  })
+
   it('should be able to create an user', () => {
     const usersRepository = new InMemoryUsersRepository()
     const createUser = new CreateUser(usersRepository)
