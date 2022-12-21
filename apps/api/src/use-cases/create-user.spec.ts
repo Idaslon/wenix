@@ -2,9 +2,9 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import prisma from '../prisma'
 import { CreateUser } from './create-user'
 
-describe('Create User', () => {
+describe('Create User', async () => {
   beforeEach(async () => {
-    await prisma.user.deleteMany()
+    await prisma.user.deleteMany({})
   })
 
   it('should be able to create an user', () => {
