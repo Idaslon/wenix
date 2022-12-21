@@ -2,7 +2,7 @@
   "name": "tsconfig",
   "version": "0.0.1",
   "private": true,
-  "devDependencies": {
-    "typescript": "4.9.3"
+  "dependencies": {
+    "typescript": "4.9.4"
   }
 }
