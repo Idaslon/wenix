@@ -1,5 +1,5 @@
 import { User, validateCreateUser } from '@wenix/models'
-import { UsersRepository } from '../repositories/users-repository'
+import prisma from '../prisma'
 import { EncryptionService } from '../services/encryption-service'
 import { BaseEncryptionService } from '../services/implementation/base-encryption-service'
 
@@ -14,7 +14,7 @@ type CreateUserResponse = User
 export class CreateUser {
   private encryptionService: EncryptionService
 
-  constructor(private usersRepository: UsersRepository, encryptionService?: EncryptionService) {
+  constructor(encryptionService?: EncryptionService) {
     this.encryptionService = encryptionService || new BaseEncryptionService()
   }
 
@@ -27,7 +27,9 @@ export class CreateUser {
       password,
     })
 
-    const userExists = await this.usersRepository.findUserByEmail(email)
+    const userExists = await prisma.user.findUnique({
+      where: { email },
+    })
 
     if (userExists !== null) {
       throw new Error('An user with this email already exists')
@@ -41,7 +43,10 @@ export class CreateUser {
       password: encryptedPassword,
     })
 
-    const user = this.usersRepository.create(createUserProps)
+    const user = await prisma.user.create({
+      data: createUserProps,
+    })
+
     return user
   }
 }

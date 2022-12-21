@@ -1,5 +1,5 @@
 import { User } from '@wenix/models'
-import { UsersRepository } from '../repositories/users-repository'
+import prisma from '../prisma'
 import { AuthService } from '../services/auth-service'
 import { EncryptionService } from '../services/encryption-service'
 import { BaseEncryptionService } from '../services/implementation/base-encryption-service'
@@ -17,18 +17,16 @@ export interface LoginResponse {
 export class Login {
   private encryptionService: EncryptionService
 
-  constructor(
-    private usersRepository: UsersRepository,
-    private authService: AuthService,
-    encryptionService?: EncryptionService
-  ) {
+  constructor(private authService: AuthService, encryptionService?: EncryptionService) {
     this.encryptionService = encryptionService || new BaseEncryptionService()
   }
 
   async execute(request: LoginRequest): Promise<LoginResponse> {
     const { email, password } = request
 
-    const user = await this.usersRepository.findUserByEmail(email)
+    const user = await prisma.user.findUnique({
+      where: { email },
+    })
 
     if (user === null) {
       throw new Error('User not found')
