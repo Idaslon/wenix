@@ -1,5 +1,5 @@
 {
-  "name": "@wenix/api",
+  "name": "@wenix/server",
   "main": "src/index.ts",
   "private": true,
   "version": "0.0.1",

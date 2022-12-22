@@ -16,45 +16,6 @@ importers:
       tsconfig: link:packages/tsconfig
       turbo: 1.6.3
 
-  apps/api:
-    specifiers:
-      '@prisma/client': ^4.8.0
-      '@types/bcrypt': ^5.0.0
-      '@types/jsonwebtoken': ^8.5.9
-      '@types/node': 18.11.17
-      '@typescript-eslint/eslint-plugin': ^5.47.0
-      '@typescript-eslint/parser': ^5.47.0
-      '@vitest/coverage-c8': ^0.26.2
-      '@wenix/models': workspace:*
-      bcrypt: ^5.1.0
-      dotenv: ^16.0.3
-      eslint-config-custom: workspace:*
-      jsonwebtoken: ^9.0.0
-      prisma: ^4.8.0
-      ts-node-dev: ^2.0.0
-      tsconfig: workspace:*
-      typescript: 4.9.4
-      vitest: ^0.26.2
-    dependencies:
-      '@prisma/client': 4.8.0_prisma@4.8.0
-      '@wenix/models': link:../../packages/models
-      bcrypt: 5.1.0
-      dotenv: 16.0.3
-      jsonwebtoken: 9.0.0
-      prisma: 4.8.0
-    devDependencies:
-      '@types/bcrypt': 5.0.0
-      '@types/jsonwebtoken': 8.5.9
-      '@types/node': 18.11.17
-      '@typescript-eslint/eslint-plugin': 5.47.0_z6f2pmj6irx4lvzl46kkfxteta
-      '@typescript-eslint/parser': 5.47.0_typescript@4.9.4
-      '@vitest/coverage-c8': 0.26.2
-      eslint-config-custom: link:../../packages/eslint-config
-      ts-node-dev: 2.0.0_moeqx3xmzxqxagf2sz6mqkbb7m
-      tsconfig: link:../../packages/tsconfig
-      typescript: 4.9.4
-      vitest: 0.26.2
-
   apps/docs:
     specifiers:
       '@babel/core': ^7.20.5
@@ -95,6 +56,45 @@ importers:
       http-server: 14.1.1
       tsconfig: link:../../packages/tsconfig
       tsconfig-paths-webpack-plugin: 4.0.0
+
+  apps/server:
+    specifiers:
+      '@prisma/client': ^4.8.0
+      '@types/bcrypt': ^5.0.0
+      '@types/jsonwebtoken': ^8.5.9
+      '@types/node': 18.11.17
+      '@typescript-eslint/eslint-plugin': ^5.47.0
+      '@typescript-eslint/parser': ^5.47.0
+      '@vitest/coverage-c8': ^0.26.2
+      '@wenix/models': workspace:*
+      bcrypt: ^5.1.0
+      dotenv: ^16.0.3
+      eslint-config-custom: workspace:*
+      jsonwebtoken: ^9.0.0
+      prisma: ^4.8.0
+      ts-node-dev: ^2.0.0
+      tsconfig: workspace:*
+      typescript: 4.9.4
+      vitest: ^0.26.2
+    dependencies:
+      '@prisma/client': 4.8.0_prisma@4.8.0
+      '@wenix/models': link:../../packages/models
+      bcrypt: 5.1.0
+      dotenv: 16.0.3
+      jsonwebtoken: 9.0.0
+      prisma: 4.8.0
+    devDependencies:
+      '@types/bcrypt': 5.0.0
+      '@types/jsonwebtoken': 8.5.9
+      '@types/node': 18.11.17
+      '@typescript-eslint/eslint-plugin': 5.47.0_z6f2pmj6irx4lvzl46kkfxteta
+      '@typescript-eslint/parser': 5.47.0_typescript@4.9.4
+      '@vitest/coverage-c8': 0.26.2
+      eslint-config-custom: link:../../packages/eslint-config
+      ts-node-dev: 2.0.0_moeqx3xmzxqxagf2sz6mqkbb7m
+      tsconfig: link:../../packages/tsconfig
+      typescript: 4.9.4
+      vitest: 0.26.2
 
   apps/web:
     specifiers:
@@ -3917,14 +3917,14 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 16.18.10
+      '@types/node': 18.11.17
     dev: true
 
   /@types/glob/8.0.0:
     resolution: {integrity: sha512-l6NQsDDyQUVeoTynNpC9uRvCUint/gSUXQA2euwmTuWGvPY5LSDUu6tkCtJB2SvGQlJQzLaKqcGZP4//7EDveA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 16.18.10
+      '@types/node': 18.11.17
     dev: true
 
   /@types/graceful-fs/4.1.5:
@@ -3998,7 +3998,7 @@ packages:
   /@types/node-fetch/2.6.2:
     resolution: {integrity: sha512-DHqhlq5jeESLy19TYhLakJ07kNumXWjcDdxXsLUMJZ6ue8VZJj4kLPQVE/2mdHh3xZziNF1xppu5lwmS53HR+A==}
     dependencies:
-      '@types/node': 16.18.10
+      '@types/node': 18.11.17
       form-data: 3.0.1
     dev: true
 
@@ -4105,7 +4105,7 @@ packages:
   /@types/webpack-sources/3.2.0:
     resolution: {integrity: sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==}
     dependencies:
-      '@types/node': 16.18.10
+      '@types/node': 18.11.17
       '@types/source-list-map': 0.1.2
       source-map: 0.7.4
     dev: true
@@ -4113,7 +4113,7 @@ packages:
   /@types/webpack/4.41.33:
     resolution: {integrity: sha512-PPajH64Ft2vWevkerISMtnZ8rTs4YmRbs+23c402J0INmxDKCrhZNvwZYtzx96gY2wAtXdrK1BS2fiC8MlLr3g==}
     dependencies:
-      '@types/node': 16.18.10
+      '@types/node': 18.11.17
       '@types/tapable': 1.0.8
       '@types/uglify-js': 3.17.1
       '@types/webpack-sources': 3.2.0
@@ -8811,7 +8811,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 16.18.10
+      '@types/node': 18.11.17
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true

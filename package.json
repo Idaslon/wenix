@@ -7,7 +7,6 @@
     "start": "turbo run start",
     "lint": "turbo run lint",
     "clean": "turbo run clean",
-    "test": "turbo run test",
     "preinstall": "npx only-allow pnpm"
   },
   "devDependencies": {
