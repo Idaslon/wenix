@@ -28,12 +28,12 @@ describe('Create User', async () => {
       password: '123456',
     })
 
-    // expect(
-    //   createUser.execute({
-    //     name: 'John 2',
-    //     email: 'john@example.com',
-    //     password: '123456',
-    //   })
-    // ).rejects.toThrow('An user with this email already exists')
+    expect(
+      createUser.execute({
+        name: 'John 2',
+        email: 'john@example.com',
+        password: '123456',
+      })
+    ).rejects.toThrow('An user with this email already exists')
   })
 })

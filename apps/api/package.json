@@ -9,7 +9,7 @@
     "start": "node ./dist/index.js",
     "build": "tsc",
     "dev": "tsnd --respawn --transpile-only src/index.ts",
-    "test": "vitest",
+    "test": "vitest --no-threads",
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {

@@ -41,7 +41,7 @@ describe('Login', () => {
         email: 'john@example.com',
         password: '123456',
       })
-    ).rejects.toBeInstanceOf(Error)
+    ).rejects.toThrow('User not found')
   })
 
   it('should not login with wrong user password', async () => {
@@ -61,7 +61,7 @@ describe('Login', () => {
         email: 'john@example.com',
         password: '1234567',
       })
-    ).rejects.toBeInstanceOf(Error)
+    ).rejects.toThrow('Passwords does not match')
   })
 })
 
