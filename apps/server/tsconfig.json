@@ -6,6 +6,9 @@
     "module": "commonjs",
     "outDir": "./dist",
     "strictPropertyInitialization": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["es2020", "esnext.asynciterable"]
   },
   "include": ["src/**/*.ts"],
   "exclude": [

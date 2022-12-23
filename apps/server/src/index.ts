@@ -1,8 +1,6 @@
 import './environment'
-import { serverConfig } from './config/server'
+import 'reflect-metadata'
 
-async function main() {
-  console.log('Server will run on:', serverConfig.port)
-}
+import { startServer } from './server'
 
-main()
+startServer()
