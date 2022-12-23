@@ -1,32 +1,27 @@
 import { Arg, Mutation, Query, Resolver } from 'type-graphql'
+import prisma from '../../prisma'
 import { CreateUserInput } from '../dtos/inputs/create-user-input'
 import { UserModel } from '../dtos/models/user-model'
+import { CreateUser } from '../use-cases/create-user'
 
 @Resolver(() => UserModel)
 export class UsersResolver {
   @Query(() => [UserModel])
   async users() {
-    const other = new UserModel()
-    other.name = 'other'
-    other.email = 'other'
-
-    return [
-      {
-        name: 'test',
-        email: 'test@gmail.com',
-      },
-      other,
-    ]
+    const users = await prisma.user.findMany()
+    return users
   }
 
   @Mutation(() => UserModel)
   async createUser(@Arg('data') data: CreateUserInput) {
-    const { name, email } = data
+    const { name, email, password } = data
+    const createUser = new CreateUser()
 
-    const user: UserModel = {
+    const user = await createUser.execute({
       name,
       email,
-    }
+      password,
+    })
 
     return user
   }
