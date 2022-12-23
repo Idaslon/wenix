@@ -3,6 +3,21 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+input CreateUserInput {
+  email: String!
+  name: String!
+  password: String!
+}
+
+type Mutation {
+  createUser(data: CreateUserInput!): UserModel!
+}
+
 type Query {
-  helloWorld: String!
+  users: [UserModel!]!
+}
+
+type UserModel {
+  email: String!
+  name: String!
 }

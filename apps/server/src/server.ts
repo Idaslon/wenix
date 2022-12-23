@@ -11,6 +11,11 @@ export async function startServer() {
   const schema = await buildSchema({
     resolvers: [UsersResolver],
     emitSchemaFile: path.resolve(__dirname, 'schema.gql'),
+
+    // Take a look on this: https://github.com/MichalLytek/type-graphql/issues/1397
+    validate: {
+      forbidUnknownValues: false,
+    },
   })
 
   const server = new ApolloServer({
