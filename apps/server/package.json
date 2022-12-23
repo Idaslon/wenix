@@ -10,15 +10,21 @@
     "build": "tsc",
     "dev": "tsnd --respawn --transpile-only src/index.ts",
     "test": "vitest --no-threads",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "migrate": "prisma migrate"
   },
   "dependencies": {
+    "@apollo/server": "^4.3.0",
     "@prisma/client": "^4.8.0",
     "@wenix/models": "workspace:*",
     "bcrypt": "^5.1.0",
+    "class-validator": "^0.14.0",
     "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
     "jsonwebtoken": "^9.0.0",
-    "prisma": "^4.8.0"
+    "prisma": "^4.8.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

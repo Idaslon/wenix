@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import { authConfig } from '../../config/auth'
+import { authConfig } from '../../../config/auth'
 import { AuthPayload, AuthService } from '../auth-service'
 
 export class JWTAuthService implements AuthService {

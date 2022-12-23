@@ -1,5 +1,5 @@
 import { User } from '@wenix/models'
-import prisma from '../prisma'
+import prisma from '../../prisma'
 import { AuthService } from '../services/auth-service'
 import { EncryptionService } from '../services/encryption-service'
 import { BaseEncryptionService } from '../services/implementation/base-encryption-service'

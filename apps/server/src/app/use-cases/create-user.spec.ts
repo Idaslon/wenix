@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import prisma from '../prisma'
+import prisma from '../../prisma'
 import { CreateUser } from './create-user'
 
 describe('Create User', async () => {

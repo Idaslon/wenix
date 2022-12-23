@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt'
 
-import { encryptionConfig } from '../../config/encryption'
+import { encryptionConfig } from '../../../config/encryption'
 import { EncryptionService } from '../encryption-service'
 
 export class BaseEncryptionService implements EncryptionService {
