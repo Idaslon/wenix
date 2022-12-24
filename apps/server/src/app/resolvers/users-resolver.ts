@@ -2,7 +2,6 @@ import { Arg, Mutation, Query, Resolver } from 'type-graphql'
 import prisma from '../../prisma'
 import { CreateUserInput } from '../dtos/inputs/create-user-input'
 import { UserModel } from '../dtos/models/user-model'
-import { CreateUser } from '../use-cases/create-user'
 
 @Resolver(() => UserModel)
 export class UsersResolver {
@@ -12,17 +11,17 @@ export class UsersResolver {
     return users
   }
 
-  @Mutation(() => UserModel)
-  async createUser(@Arg('data') data: CreateUserInput) {
-    const { name, email, password } = data
-    const createUser = new CreateUser()
+  // @Mutation(() => UserModel)
+  // async createUser(@Arg('data') data: CreateUserInput) {
+  //   const { name, email, password } = data
+  //   const createUser = new CreateUser()
 
-    const user = await createUser.execute({
-      name,
-      email,
-      password,
-    })
+  //   const user = await createUser.execute({
+  //     name,
+  //     email,
+  //     password,
+  //   })
 
-    return user
-  }
+  //   return user
+  // }
 }
