@@ -22,10 +22,17 @@ type LoginModel {
 type Mutation {
   createUser(data: CreateUserInput!): UserModel!
   login(data: LoginInput!): LoginModel!
+  register(data: RegisterInput!): UserModel!
 }
 
 type Query {
   users: [UserModel!]!
+}
+
+input RegisterInput {
+  email: String!
+  name: String!
+  password: String!
 }
 
 type UserModel {
