@@ -9,8 +9,19 @@ input CreateUserInput {
   password: String!
 }
 
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type LoginModel {
+  token: String!
+  user: UserModel!
+}
+
 type Mutation {
   createUser(data: CreateUserInput!): UserModel!
+  login(data: LoginInput!): LoginModel!
 }
 
 type Query {
@@ -19,5 +30,6 @@ type Query {
 
 type UserModel {
   email: String!
+  id: Float!
   name: String!
 }
