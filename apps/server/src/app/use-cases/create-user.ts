@@ -11,7 +11,7 @@ interface CreateUserRequest {
 
 type CreateUserResponse = User
 
-export class CreateUser {
+export class CreateUserUseCase {
   private encryptionService: EncryptionService
 
   constructor(encryptionService?: EncryptionService) {

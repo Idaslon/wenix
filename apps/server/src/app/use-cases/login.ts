@@ -14,7 +14,7 @@ export interface LoginResponse {
   token: string
 }
 
-export class Login {
+export class LoginUseCase {
   private encryptionService: EncryptionService
 
   constructor(private authService: AuthService, encryptionService?: EncryptionService) {

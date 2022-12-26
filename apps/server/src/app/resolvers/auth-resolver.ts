@@ -3,8 +3,8 @@ import { LoginInput, RegisterInput } from '../dtos/inputs/auth-input'
 import { LoginModel } from '../dtos/models/auth-model'
 import { UserModel } from '../dtos/models/user-model'
 import { JWTAuthService } from '../services/implementation/jwt-auth-service'
-import { CreateUser } from '../use-cases/create-user'
-import { Login } from '../use-cases/login'
+import { CreateUserUseCase } from '../use-cases/create-user'
+import { LoginUseCase } from '../use-cases/login'
 
 @Resolver()
 export class AuthResolver {
@@ -13,7 +13,7 @@ export class AuthResolver {
     const { email, password } = data
 
     const authService = new JWTAuthService()
-    const login = new Login(authService)
+    const login = new LoginUseCase(authService)
 
     const { user, token } = await login.execute({
       email,
@@ -30,7 +30,7 @@ export class AuthResolver {
   async register(@Arg('data') data: RegisterInput) {
     const { name, email, password } = data
 
-    const createUser = new CreateUser()
+    const createUser = new CreateUserUseCase()
 
     const user = await createUser.execute({
       name,
