@@ -6,12 +6,13 @@ import { buildSchema } from 'type-graphql'
 import { UsersResolver } from '../app/resolvers/users-resolver'
 import { AuthResolver } from '../app/resolvers/auth-resolver'
 import type { ServerContext } from './types'
+import { PostsResolver } from '../app/resolvers/posts-resolver'
 
 const schemaPath = path.resolve(__dirname, '..', 'schema.gql')
 
 export async function createServer() {
   const schema = await buildSchema({
-    resolvers: [UsersResolver, AuthResolver],
+    resolvers: [UsersResolver, AuthResolver, PostsResolver],
     emitSchemaFile: schemaPath,
 
     // Take a look on this: https://github.com/MichalLytek/type-graphql/issues/1397
