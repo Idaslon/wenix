@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import prisma from '../../prisma'
-import { CreateUser } from './create-user'
+import { CreateUserUseCase } from './create-user'
 
 describe('Create User', async () => {
   beforeEach(async () => {
@@ -8,7 +8,7 @@ describe('Create User', async () => {
   })
 
   it('should be able to create an user', () => {
-    const createUser = new CreateUser()
+    const createUser = new CreateUserUseCase()
 
     expect(
       createUser.execute({
@@ -20,7 +20,7 @@ describe('Create User', async () => {
   })
 
   it('should not be able to create an user with an email that already exists', async () => {
-    const createUser = new CreateUser()
+    const createUser = new CreateUserUseCase()
 
     await createUser.execute({
       name: 'John',

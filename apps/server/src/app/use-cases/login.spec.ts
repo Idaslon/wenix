@@ -1,9 +1,9 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import prisma from '../../prisma'
 import { JWTAuthService } from '../services/implementation/jwt-auth-service'
-import { CreateUser } from './create-user'
+import { CreateUserUseCase } from './create-user'
 
-import { Login } from './login'
+import { LoginUseCase } from './login'
 
 describe('Login', () => {
   beforeEach(async () => {
@@ -13,8 +13,8 @@ describe('Login', () => {
   it('should be able to login an user', async () => {
     const jwtAuthService = new JWTAuthService()
 
-    const createUser = new CreateUser()
-    const login = new Login(jwtAuthService)
+    const createUser = new CreateUserUseCase()
+    const login = new LoginUseCase(jwtAuthService)
 
     await createUser.execute({
       name: 'John',
@@ -34,7 +34,7 @@ describe('Login', () => {
   it('should not login with an user that does not exists', async () => {
     const jwtAuthService = new JWTAuthService()
 
-    const login = new Login(jwtAuthService)
+    const login = new LoginUseCase(jwtAuthService)
 
     expect(
       login.execute({
@@ -47,8 +47,8 @@ describe('Login', () => {
   it('should not login with wrong user password', async () => {
     const jwtAuthService = new JWTAuthService()
 
-    const createUser = new CreateUser()
-    const login = new Login(jwtAuthService)
+    const createUser = new CreateUserUseCase()
+    const login = new LoginUseCase(jwtAuthService)
 
     await createUser.execute({
       name: 'John',
@@ -73,8 +73,8 @@ describe('JWT Login', () => {
   it('should have correct token', async () => {
     const jwtAuthService = new JWTAuthService()
 
-    const createUser = new CreateUser()
-    const login = new Login(jwtAuthService)
+    const createUser = new CreateUserUseCase()
+    const login = new LoginUseCase(jwtAuthService)
 
     await createUser.execute({
       name: 'John',
