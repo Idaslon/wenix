@@ -1,7 +1,7 @@
-import { describe, expect, it, test } from 'vitest'
-import { validateCreateUser, validateUser } from './user'
+import { describe, expect, it } from 'vitest'
+import { validateCreateUser, validateUpdateUser } from './user'
 
-describe('validate user creation', () => {
+describe('Validate User Creation', () => {
   it('should valid an user creation', () => {
     expect(
       validateCreateUser({
@@ -23,7 +23,7 @@ describe('validate user creation', () => {
         email: 'john@example.com',
         password: '123456',
       })
-    ).toThrowError()
+    ).toThrowError('The name is required')
   })
 
   it('should not valid an user creation with empty name', () => {
@@ -33,162 +33,40 @@ describe('validate user creation', () => {
         email: 'john@example.com',
         password: '123456',
       })
-    ).toThrowError()
+    ).toThrowError('The name should not be empty')
   })
 
-  it('should not valid an user creation without email', () => {
+  it('should not valid an user creation with invalid name type', () => {
     expect(() =>
       validateCreateUser({
-        name: 'John',
-        email: undefined as any,
-        password: '123456',
-      })
-    ).toThrowError()
-  })
-
-  it('should not valid an user creation with empty email', () => {
-    expect(() =>
-      validateCreateUser({
-        name: 'John',
-        email: '',
-        password: '123456',
-      })
-    ).toThrowError()
-  })
-
-  it('should not valid an user creation with invalid email', () => {
-    expect(() =>
-      validateCreateUser({
-        name: 'John',
-        email: 'wrongEmail',
-        password: '123456',
-      })
-    ).toThrowError()
-  })
-
-  it('should not valid an user creation without password', () => {
-    expect(() =>
-      validateCreateUser({
-        name: 'John',
+        name: true as any,
         email: 'john@example.com',
-        password: undefined as any,
+        password: '123456',
       })
-    ).toThrowError()
-  })
-
-  it('should not valid an user creation with password length less than 6', () => {
-    expect(() =>
-      validateCreateUser({
-        name: 'John',
-        email: 'john@example.com',
-        password: '12345',
-      })
-    ).toThrowError()
+    ).toThrowError('The name must be a text')
   })
 })
 
-describe('validate user', () => {
-  it('should valid an user', () => {
+describe('Validate User Update', () => {
+  it('should valid an user update', () => {
     expect(
-      validateUser({
-        id: 1,
+      validateUpdateUser({
         name: 'John',
-        email: 'john@example.com',
         password: '123456',
       })
     ).toStrictEqual({
-      id: 1,
       name: 'John',
-      email: 'john@example.com',
       password: '123456',
     })
   })
 
-  it('should not valid an user without id', () => {
+  it('should not valid an user update with email', () => {
     expect(() =>
-      validateUser({
-        id: undefined as any,
+      validateUpdateUser({
         name: 'John',
-        email: 'john@example.com',
+        email: 'john@hotmail.com',
         password: '123456',
-      })
-    ).toThrowError()
-  })
-
-  it('should not valid an user without name', () => {
-    expect(() =>
-      validateUser({
-        id: 1,
-        name: undefined as any,
-        email: 'john@example.com',
-        password: '123456',
-      })
-    ).toThrowError()
-  })
-
-  it('should not valid an user with empty name', () => {
-    expect(() =>
-      validateUser({
-        id: 1,
-        name: '',
-        email: 'john@example.com',
-        password: '123456',
-      })
-    ).toThrowError()
-  })
-
-  it('should not valid an user without email', () => {
-    expect(() =>
-      validateUser({
-        id: 1,
-        name: 'John',
-        email: undefined as any,
-        password: '123456',
-      })
-    ).toThrowError()
-  })
-
-  it('should not valid an user with empty email', () => {
-    expect(() =>
-      validateUser({
-        id: 1,
-        name: 'John',
-        email: '',
-        password: '123456',
-      })
-    ).toThrowError()
-  })
-
-  it('should not valid an user with invalid email', () => {
-    expect(() =>
-      validateUser({
-        id: 1,
-        name: 'John',
-        email: 'wrongEmail',
-        password: '123456',
-      })
-    ).toThrowError()
-  })
-
-  it('should not valid an user without password', () => {
-    expect(() =>
-      validateUser({
-        id: 1,
-        name: 'John',
-        email: 'john@example.com',
-        password: undefined as any,
-      })
-    ).toThrowError()
-  })
-
-  it('should not valid an user with password length less than 6', () => {
-    expect(() =>
-      validateUser({
-        id: 1,
-        name: 'John',
-        email: 'john@example.com',
-        password: '12345',
-      })
-    ).toThrowError()
+      } as any)
+    ).toThrowError('Email cannot be edited')
   })
 })
