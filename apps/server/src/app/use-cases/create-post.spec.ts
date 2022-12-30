@@ -29,4 +29,16 @@ describe('Create Post', () => {
     expect(post.description).toBe('Is Coming...')
     expect(post.authorId).toBe(user.id)
   })
+
+  it('should not be able to create a post with authorId that not exists', async () => {
+    const createPost = new CreatePostUseCase()
+
+    expect(
+      createPost.execute({
+        title: 'IsComing',
+        description: 'Is Coming...',
+        authorId: 1,
+      })
+    ).rejects.toThrow('Author not found')
+  })
 })

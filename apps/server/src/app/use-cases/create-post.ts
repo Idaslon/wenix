@@ -19,6 +19,14 @@ export class CreatePostUseCase {
       authorId,
     })
 
+    const userExists = await prisma.user.findUnique({
+      where: { id: authorId },
+    })
+
+    if (userExists === null) {
+      throw new Error('Author not found')
+    }
+
     const post = await prisma.post.create({
       data: {
         title,
