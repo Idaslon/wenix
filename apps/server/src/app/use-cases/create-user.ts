@@ -37,14 +37,12 @@ export class CreateUserUseCase {
 
     const encryptedPassword = await this.encryptionService.hashPassword(password)
 
-    const createUserProps = validateCreateUser({
-      name,
-      email,
-      password: encryptedPassword,
-    })
-
     const user = await prisma.user.create({
-      data: createUserProps,
+      data: {
+        name,
+        email,
+        password: encryptedPassword,
+      },
     })
 
     return user
