@@ -7,7 +7,8 @@ import { LoginUseCase } from './login'
 
 describe('Login', () => {
   beforeEach(async () => {
-    await prisma.user.deleteMany({})
+    await prisma.post.deleteMany()
+    await prisma.user.deleteMany()
   })
 
   it('should be able to login an user', async () => {
@@ -67,6 +68,7 @@ describe('Login', () => {
 
 describe('JWT Login', () => {
   beforeEach(async () => {
+    await prisma.post.deleteMany()
     await prisma.user.deleteMany({})
   })
 
