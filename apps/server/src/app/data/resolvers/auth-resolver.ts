@@ -1,10 +1,11 @@
 import { Arg, Mutation, Resolver } from 'type-graphql'
-import { LoginInput, RegisterInput } from '../dtos/inputs/auth-input'
-import { LoginModel } from '../dtos/models/auth-model'
-import { UserModel } from '../dtos/models/user-model'
-import { JWTAuthService } from '../services/implementation/jwt-auth-service'
-import { CreateUserUseCase } from '../use-cases/create-user'
-import { LoginUseCase } from '../use-cases/login'
+
+import { JWTAuthService } from '../../services/implementation/jwt-auth-service'
+import { CreateUserUseCase } from '../../use-cases/create-user'
+import { LoginUseCase } from '../../use-cases/login'
+import { LoginInput, RegisterInput } from '../dtos/auth/auth-inputs'
+import { LoginModel } from '../dtos/auth/auth-models'
+import { UserModel } from '../dtos/users/users-models'
 
 @Resolver()
 export class AuthResolver {

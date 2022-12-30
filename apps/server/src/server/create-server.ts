@@ -3,10 +3,11 @@ import path from 'node:path'
 import { ApolloServer } from '@apollo/server'
 import { buildSchema } from 'type-graphql'
 
-import { UsersResolver } from '../app/resolvers/users-resolver'
-import { AuthResolver } from '../app/resolvers/auth-resolver'
 import type { ServerContext } from './types'
-import { PostsResolver } from '../app/resolvers/posts-resolver'
+
+import { UsersResolver } from '../app/data/resolvers/users-resolver'
+import { AuthResolver } from '../app/data/resolvers/auth-resolver'
+import { PostsResolver } from '../app/data/resolvers/posts-resolver'
 
 const schemaPath = path.resolve(__dirname, '..', 'schema.gql')
 

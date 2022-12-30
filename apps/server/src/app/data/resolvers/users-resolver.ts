@@ -1,6 +1,6 @@
 import { Query, Resolver } from 'type-graphql'
-import prisma from '../../prisma'
-import { UserModel } from '../dtos/models/user-model'
+import prisma from '../../../prisma'
+import { UserModel } from '../dtos/users/users-models'
 
 @Resolver(() => UserModel)
 export class UsersResolver {
