@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { validateSchema } from './error'
+import { validateSchema } from '../../utils'
 
 const basePostSchema = z.object({
   title: z
