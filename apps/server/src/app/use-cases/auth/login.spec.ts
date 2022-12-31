@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import prisma from '../../../prisma'
+import { UsersPrismaRepository } from '../../repositories/implementations/users-prisma-repository'
 import { JWTAuthService } from '../../services/implementation/jwt-auth-service'
 import { CreateUserUseCase } from '../user'
 
@@ -13,8 +14,9 @@ describe('Login', () => {
 
   it('should be able to login an user', async () => {
     const jwtAuthService = new JWTAuthService()
+    const usersRepository = new UsersPrismaRepository()
 
-    const createUser = new CreateUserUseCase()
+    const createUser = new CreateUserUseCase(usersRepository)
     const login = new LoginUseCase(jwtAuthService)
 
     await createUser.execute({
@@ -47,8 +49,9 @@ describe('Login', () => {
 
   it('should not login with wrong user password', async () => {
     const jwtAuthService = new JWTAuthService()
+    const usersRepository = new UsersPrismaRepository()
 
-    const createUser = new CreateUserUseCase()
+    const createUser = new CreateUserUseCase(usersRepository)
     const login = new LoginUseCase(jwtAuthService)
 
     await createUser.execute({
@@ -74,8 +77,9 @@ describe('JWT Login', () => {
 
   it('should have correct token', async () => {
     const jwtAuthService = new JWTAuthService()
+    const usersRepository = new UsersPrismaRepository()
 
-    const createUser = new CreateUserUseCase()
+    const createUser = new CreateUserUseCase(usersRepository)
     const login = new LoginUseCase(jwtAuthService)
 
     await createUser.execute({

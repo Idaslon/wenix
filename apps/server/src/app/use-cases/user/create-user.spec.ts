@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import prisma from '../../../prisma'
 import { CreateUserUseCase } from './create-user'
+import { UsersPrismaRepository } from '../../repositories/implementations/users-prisma-repository'
 
 describe('Create User', () => {
   beforeEach(async () => {
@@ -9,7 +10,8 @@ describe('Create User', () => {
   })
 
   it('should be able to create an user', async () => {
-    const createUser = new CreateUserUseCase()
+    const usersRepository = new UsersPrismaRepository()
+    const createUser = new CreateUserUseCase(usersRepository)
 
     const user = await createUser.execute({
       name: 'John',
@@ -25,7 +27,8 @@ describe('Create User', () => {
   })
 
   it('should not be able to create an user with an email that already exists', async () => {
-    const createUser = new CreateUserUseCase()
+    const usersRepository = new UsersPrismaRepository()
+    const createUser = new CreateUserUseCase(usersRepository)
 
     await createUser.execute({
       name: 'John',

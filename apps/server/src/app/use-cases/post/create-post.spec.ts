@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import prisma from '../../../prisma'
 import { CreateUserUseCase } from '../user'
 import { CreatePostUseCase } from '../post'
+import { UsersPrismaRepository } from '../../repositories/implementations/users-prisma-repository'
 
 describe('Create Post', () => {
   beforeEach(async () => {
@@ -10,7 +11,9 @@ describe('Create Post', () => {
   })
 
   it('should be able to create a post', async () => {
-    const createUser = new CreateUserUseCase()
+    const usersRepository = new UsersPrismaRepository()
+
+    const createUser = new CreateUserUseCase(usersRepository)
     const createPost = new CreatePostUseCase()
 
     const user = await createUser.execute({

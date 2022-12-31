@@ -6,6 +6,7 @@ import { LoginUseCase } from '../../use-cases/auth'
 import { LoginInput, RegisterInput } from '../dtos/auth/auth-inputs'
 import { LoginModel } from '../dtos/auth/auth-models'
 import { UserModel } from '../dtos/users/users-models'
+import { UsersPrismaRepository } from '../../repositories/implementations/users-prisma-repository'
 
 @Resolver()
 export class AuthResolver {
@@ -31,7 +32,8 @@ export class AuthResolver {
   async register(@Arg('data') data: RegisterInput) {
     const { name, email, password } = data
 
-    const createUser = new CreateUserUseCase()
+    const usersRepository = new UsersPrismaRepository()
+    const createUser = new CreateUserUseCase(usersRepository)
 
     const user = await createUser.execute({
       name,

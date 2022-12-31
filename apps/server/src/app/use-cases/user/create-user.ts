@@ -1,6 +1,6 @@
 import { User } from '@prisma/client'
 import { validateCreateUser } from '@wenix/validations'
-import prisma from '../../../prisma'
+import { UsersRepository } from '../../repositories/users-repository'
 import { EncryptionService } from '../../services/encryption-service'
 import { BaseEncryptionService } from '../../services/implementation/base-encryption-service'
 
@@ -15,7 +15,7 @@ type CreateUserResponse = User
 export class CreateUserUseCase {
   private encryptionService: EncryptionService
 
-  constructor(encryptionService?: EncryptionService) {
+  constructor(private usersRepository: UsersRepository, encryptionService?: EncryptionService) {
     this.encryptionService = encryptionService || new BaseEncryptionService()
   }
 
@@ -28,7 +28,7 @@ export class CreateUserUseCase {
       password,
     })
 
-    const userExists = await prisma.user.findUnique({
+    const userExists = await this.usersRepository.findUnique({
       where: { email },
     })
 
@@ -38,12 +38,10 @@ export class CreateUserUseCase {
 
     const encryptedPassword = await this.encryptionService.hashPassword(password)
 
-    const user = await prisma.user.create({
-      data: {
-        name,
-        email,
-        password: encryptedPassword,
-      },
+    const user = await this.usersRepository.create({
+      name,
+      email,
+      password: encryptedPassword,
     })
 
     return user
