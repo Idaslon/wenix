@@ -1,4 +1,4 @@
-import { User } from '@wenix/models'
+import { User } from '@wenix/validations'
 import prisma from '../../prisma'
 import { AuthService } from '../services/auth-service'
 import { EncryptionService } from '../services/encryption-service'

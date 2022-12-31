@@ -67,7 +67,7 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.47.0
       '@typescript-eslint/parser': ^5.47.0
       '@vitest/coverage-c8': ^0.26.2
-      '@wenix/models': workspace:*
+      '@wenix/validations': workspace:*
       bcrypt: ^5.1.0
       class-validator: ^0.14.0
       dotenv: ^16.0.3
@@ -84,7 +84,7 @@ importers:
     dependencies:
       '@apollo/server': 4.3.0_graphql@16.6.0
       '@prisma/client': 4.8.0_prisma@4.8.0
-      '@wenix/models': link:../../packages/models
+      '@wenix/validations': link:../../packages/validations
       bcrypt: 5.1.0
       class-validator: 0.14.0
       dotenv: 16.0.3
@@ -166,27 +166,6 @@ importers:
       eslint-plugin-prettier: 4.2.1_kl4pe43v5b43npmso5hoplpbyi
       prettier: 2.8.1
 
-  packages/models:
-    specifiers:
-      '@types/node': 18.11.17
-      '@types/react': 18.0.26
-      '@types/react-dom': 18.0.9
-      '@vitest/coverage-c8': ^0.26.2
-      eslint-config-custom: workspace:*
-      tsconfig: workspace:*
-      vitest: ^0.26.2
-      zod: ^3.20.2
-    dependencies:
-      zod: 3.20.2
-    devDependencies:
-      '@types/node': 18.11.17
-      '@types/react': 18.0.26
-      '@types/react-dom': 18.0.9
-      '@vitest/coverage-c8': 0.26.2
-      eslint-config-custom: link:../eslint-config
-      tsconfig: link:../tsconfig
-      vitest: 0.26.2
-
   packages/tsconfig:
     specifiers:
       typescript: 4.9.4
@@ -209,6 +188,27 @@ importers:
       '@types/react-dom': 18.0.9
       eslint-config-custom: link:../eslint-config
       tsconfig: link:../tsconfig
+
+  packages/validations:
+    specifiers:
+      '@types/node': 18.11.17
+      '@types/react': 18.0.26
+      '@types/react-dom': 18.0.9
+      '@vitest/coverage-c8': ^0.26.2
+      eslint-config-custom: workspace:*
+      tsconfig: workspace:*
+      vitest: ^0.26.2
+      zod: ^3.20.2
+    dependencies:
+      zod: 3.20.2
+    devDependencies:
+      '@types/node': 18.11.17
+      '@types/react': 18.0.26
+      '@types/react-dom': 18.0.9
+      '@vitest/coverage-c8': 0.26.2
+      eslint-config-custom: link:../eslint-config
+      tsconfig: link:../tsconfig
+      vitest: 0.26.2
 
 packages:
 

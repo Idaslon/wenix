@@ -16,7 +16,7 @@
   "dependencies": {
     "@apollo/server": "^4.3.0",
     "@prisma/client": "^4.8.0",
-    "@wenix/models": "workspace:*",
+    "@wenix/validations": "workspace:*",
     "bcrypt": "^5.1.0",
     "class-validator": "^0.14.0",
     "dotenv": "^16.0.3",

@@ -1,4 +1,5 @@
-import { Post, validateCreatePost } from '@wenix/models'
+import { Post } from '@prisma/client'
+import { validateCreatePost } from '@wenix/validations'
 import prisma from '../../prisma'
 
 interface CreatePostRequest {
