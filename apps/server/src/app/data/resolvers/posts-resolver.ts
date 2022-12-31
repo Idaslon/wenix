@@ -1,7 +1,7 @@
 import { Post } from '@prisma/client'
 import { Arg, FieldResolver, Mutation, Query, Resolver, Root } from 'type-graphql'
-import prisma from '../../../prisma'
-import { CreatePostUseCase } from '../../use-cases/post'
+import { CreatePostUseCase, FindManyPostsUseCase } from '../../use-cases/post'
+import { FindUniqueUserUseCase } from '../../use-cases/user'
 import { CreatePostInput } from '../dtos/posts/posts-inputs'
 import { PostModel } from '../dtos/posts/posts-models'
 
@@ -9,7 +9,9 @@ import { PostModel } from '../dtos/posts/posts-models'
 export class PostsResolver {
   @Query(() => [PostModel])
   async posts() {
-    const posts = await prisma.post.findMany()
+    const findManyPosts = new FindManyPostsUseCase()
+
+    const posts = await findManyPosts.execute()
     return posts
   }
 
@@ -30,10 +32,10 @@ export class PostsResolver {
 
   @FieldResolver()
   async author(@Root() post: Post) {
-    const author = await prisma.user.findUnique({
-      where: {
-        id: post.authorId,
-      },
+    const findUniqueUser = new FindUniqueUserUseCase()
+
+    const author = await findUniqueUser.execute({
+      id: post.authorId,
     })
 
     return author

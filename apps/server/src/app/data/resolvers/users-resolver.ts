@@ -1,12 +1,14 @@
 import { Query, Resolver } from 'type-graphql'
-import prisma from '../../../prisma'
+import { FindManyUsersUseCase } from '../../use-cases/user'
 import { UserModel } from '../dtos/users/users-models'
 
 @Resolver(() => UserModel)
 export class UsersResolver {
   @Query(() => [UserModel])
   async users() {
-    const users = await prisma.user.findMany()
+    const findManyUsers = new FindManyUsersUseCase()
+
+    const users = await findManyUsers.execute()
     return users
   }
 }
