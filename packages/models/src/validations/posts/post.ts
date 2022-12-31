@@ -1,44 +1,45 @@
 import { z } from 'zod'
 import { validateSchema } from '../../utils'
 
-const basePostSchema = z.object({
-  title: z
-    .string({
-      required_error: 'The title is required',
-      invalid_type_error: 'The title should be a text',
-    })
-    .min(1, { message: 'The title should not be empty' }),
-  description: z
-    .string({
-      required_error: 'The description is required',
-      invalid_type_error: 'The description should be a text',
-    })
-    .min(1, { message: 'The description should not be empty' }),
-  authorId: z.number({
-    required_error: 'The author is required',
-    invalid_type_error: 'The authorId must be a number',
-  }),
+const titleSchema = z
+  .string({
+    required_error: 'The title is required',
+    invalid_type_error: 'The title should be a text',
+  })
+  .min(1, { message: 'The title should not be empty' })
+
+const descriptionSchema = z
+  .string({
+    required_error: 'The description is required',
+    invalid_type_error: 'The description should be a text',
+  })
+  .min(1, { message: 'The description should not be empty' })
+
+const authorIdSchema = z.number({
+  required_error: 'The author is required',
+  invalid_type_error: 'The authorId must be a number',
 })
 
-const createPostSchema = basePostSchema
+const createPostSchema = z.object({
+  title: titleSchema,
+  description: descriptionSchema,
+  authorId: authorIdSchema,
+})
 
-const postSchema = basePostSchema.merge(
-  z.object({
-    id: z.number(),
-  })
-)
+const updatePostSchema = z.object({
+  title: titleSchema.optional(),
+  description: descriptionSchema.optional(),
+})
 
 export type CreatePostProps = z.infer<typeof createPostSchema>
-export type ValidatePostProps = z.infer<typeof postSchema>
-
-export type Post = z.infer<typeof postSchema>
+export type UpdatePostProps = z.infer<typeof updatePostSchema>
 
 export function validateCreatePost(props: CreatePostProps) {
   const post = validateSchema(createPostSchema, props)
   return post
 }
 
-export function validatePost(props: ValidatePostProps) {
-  const post = validateSchema(postSchema, props)
+export function validateUpdatePost(props: UpdatePostProps) {
+  const post = validateSchema(updatePostSchema, props)
   return post
 }
