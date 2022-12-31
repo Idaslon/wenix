@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import prisma from '../../prisma'
-import { JWTAuthService } from '../services/implementation/jwt-auth-service'
-import { CreateUserUseCase } from './create-user'
+import prisma from '../../../prisma'
+import { JWTAuthService } from '../../services/implementation/jwt-auth-service'
+import { CreateUserUseCase } from '../user'
 
 import { LoginUseCase } from './login'
 

@@ -1,6 +1,6 @@
 import { Post } from '@prisma/client'
 import { validateCreatePost } from '@wenix/validations'
-import prisma from '../../prisma'
+import prisma from '../../../prisma'
 
 interface CreatePostRequest {
   title: string

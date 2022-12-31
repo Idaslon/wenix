@@ -1,8 +1,8 @@
 import { User } from '@prisma/client'
 import { validateCreateUser } from '@wenix/validations'
-import prisma from '../../prisma'
-import { EncryptionService } from '../services/encryption-service'
-import { BaseEncryptionService } from '../services/implementation/base-encryption-service'
+import prisma from '../../../prisma'
+import { EncryptionService } from '../../services/encryption-service'
+import { BaseEncryptionService } from '../../services/implementation/base-encryption-service'
 
 interface CreateUserRequest {
   name: string

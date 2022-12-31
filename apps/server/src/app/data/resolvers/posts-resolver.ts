@@ -1,7 +1,7 @@
 import { Post } from '@prisma/client'
 import { Arg, FieldResolver, Mutation, Query, Resolver, Root } from 'type-graphql'
 import prisma from '../../../prisma'
-import { CreatePostUseCase } from '../../use-cases/create-post'
+import { CreatePostUseCase } from '../../use-cases/post'
 import { CreatePostInput } from '../dtos/posts/posts-inputs'
 import { PostModel } from '../dtos/posts/posts-models'
 

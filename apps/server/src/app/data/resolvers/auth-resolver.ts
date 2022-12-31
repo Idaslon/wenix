@@ -1,8 +1,8 @@
 import { Arg, Mutation, Resolver } from 'type-graphql'
 
 import { JWTAuthService } from '../../services/implementation/jwt-auth-service'
-import { CreateUserUseCase } from '../../use-cases/create-user'
-import { LoginUseCase } from '../../use-cases/login'
+import { CreateUserUseCase } from '../../use-cases/user'
+import { LoginUseCase } from '../../use-cases/auth'
 import { LoginInput, RegisterInput } from '../dtos/auth/auth-inputs'
 import { LoginModel } from '../dtos/auth/auth-models'
 import { UserModel } from '../dtos/users/users-models'

@@ -1,8 +1,8 @@
-import { User } from '@wenix/validations'
-import prisma from '../../prisma'
-import { AuthService } from '../services/auth-service'
-import { EncryptionService } from '../services/encryption-service'
-import { BaseEncryptionService } from '../services/implementation/base-encryption-service'
+import { User } from '@prisma/client'
+import prisma from '../../../prisma'
+import { AuthService } from '../../services/auth-service'
+import { EncryptionService } from '../../services/encryption-service'
+import { BaseEncryptionService } from '../../services/implementation/base-encryption-service'
 
 export interface LoginRequest {
   email: string

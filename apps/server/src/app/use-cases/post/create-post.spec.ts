@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import prisma from '../../prisma'
-import { CreateUserUseCase } from './create-user'
-import { CreatePostUseCase } from './create-post'
+import prisma from '../../../prisma'
+import { CreateUserUseCase } from '../user'
+import { CreatePostUseCase } from '../post'
 
 describe('Create Post', () => {
   beforeEach(async () => {
