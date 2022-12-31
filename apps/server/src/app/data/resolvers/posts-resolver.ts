@@ -1,7 +1,8 @@
-import { Post } from '@prisma/client'
 import { Arg, FieldResolver, Mutation, Query, Resolver, Root } from 'type-graphql'
+import { PostsPrismaRepository } from '../../repositories/implementations/posts-prisma-repository'
 import { UsersPrismaRepository } from '../../repositories/implementations/users-prisma-repository'
-import { CreatePostUseCase, FindManyPostsUseCase } from '../../use-cases/post'
+import { Post } from '../../repositories/posts-repository'
+import { CreatePostUseCase } from '../../use-cases/post'
 import { CreatePostInput } from '../dtos/posts/posts-inputs'
 import { PostModel } from '../dtos/posts/posts-models'
 
@@ -9,9 +10,9 @@ import { PostModel } from '../dtos/posts/posts-models'
 export class PostsResolver {
   @Query(() => [PostModel])
   async posts() {
-    const findManyPosts = new FindManyPostsUseCase()
+    const postsRepository = new PostsPrismaRepository()
 
-    const posts = await findManyPosts.execute()
+    const posts = await postsRepository.findMany()
     return posts
   }
 
@@ -19,7 +20,10 @@ export class PostsResolver {
   async post(@Arg('data') data: CreatePostInput) {
     const { title, description, authorId } = data
 
-    const createPost = new CreatePostUseCase()
+    const postsRepository = new PostsPrismaRepository()
+    const usersRepository = new UsersPrismaRepository()
+
+    const createPost = new CreatePostUseCase(postsRepository, usersRepository)
 
     const post = await createPost.execute({
       title,

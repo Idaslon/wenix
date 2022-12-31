@@ -1,6 +1,6 @@
-import { Post } from '@prisma/client'
 import { validateCreatePost } from '@wenix/validations'
-import prisma from '../../../prisma'
+import { Post, PostsRepository } from '../../repositories/posts-repository'
+import { UsersRepository } from '../../repositories/users-repository'
 
 interface CreatePostRequest {
   title: string
@@ -11,6 +11,8 @@ interface CreatePostRequest {
 type CreatePostResponse = Post
 
 export class CreatePostUseCase {
+  constructor(private postsRepository: PostsRepository, private usersRepository: UsersRepository) {}
+
   async execute(request: CreatePostRequest): Promise<CreatePostResponse> {
     const { title, description, authorId } = request
 
@@ -20,7 +22,7 @@ export class CreatePostUseCase {
       authorId,
     })
 
-    const userExists = await prisma.user.findUnique({
+    const userExists = await this.usersRepository.findUnique({
       where: { id: authorId },
     })
 
@@ -28,12 +30,10 @@ export class CreatePostUseCase {
       throw new Error('Author not found')
     }
 
-    const post = await prisma.post.create({
-      data: {
-        title,
-        description,
-        authorId,
-      },
+    const post = await this.postsRepository.create({
+      title,
+      description,
+      authorId,
     })
 
     return post
