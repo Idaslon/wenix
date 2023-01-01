@@ -14,8 +14,10 @@ export class AuthResolver {
   async login(@Arg('data') data: LoginInput) {
     const { email, password } = data
 
+    const usersRepository = new UsersPrismaRepository()
     const authService = new JWTAuthService()
-    const login = new LoginUseCase(authService)
+
+    const login = new LoginUseCase(usersRepository, authService)
 
     const { user, token } = await login.execute({
       email,

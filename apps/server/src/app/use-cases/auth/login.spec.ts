@@ -13,11 +13,11 @@ describe('Login', () => {
   })
 
   it('should be able to login an user', async () => {
-    const jwtAuthService = new JWTAuthService()
     const usersRepository = new UsersPrismaRepository()
+    const jwtAuthService = new JWTAuthService()
 
     const createUser = new CreateUserUseCase(usersRepository)
-    const login = new LoginUseCase(jwtAuthService)
+    const login = new LoginUseCase(usersRepository, jwtAuthService)
 
     await createUser.execute({
       name: 'John',
@@ -35,9 +35,10 @@ describe('Login', () => {
   })
 
   it('should not login with an user that does not exists', async () => {
+    const usersRepository = new UsersPrismaRepository()
     const jwtAuthService = new JWTAuthService()
 
-    const login = new LoginUseCase(jwtAuthService)
+    const login = new LoginUseCase(usersRepository, jwtAuthService)
 
     expect(
       login.execute({
@@ -48,11 +49,11 @@ describe('Login', () => {
   })
 
   it('should not login with wrong user password', async () => {
-    const jwtAuthService = new JWTAuthService()
     const usersRepository = new UsersPrismaRepository()
+    const jwtAuthService = new JWTAuthService()
 
+    const login = new LoginUseCase(usersRepository, jwtAuthService)
     const createUser = new CreateUserUseCase(usersRepository)
-    const login = new LoginUseCase(jwtAuthService)
 
     await createUser.execute({
       name: 'John',
@@ -76,11 +77,11 @@ describe('JWT Login', () => {
   })
 
   it('should have correct token', async () => {
-    const jwtAuthService = new JWTAuthService()
     const usersRepository = new UsersPrismaRepository()
+    const jwtAuthService = new JWTAuthService()
 
+    const login = new LoginUseCase(usersRepository, jwtAuthService)
     const createUser = new CreateUserUseCase(usersRepository)
-    const login = new LoginUseCase(jwtAuthService)
 
     await createUser.execute({
       name: 'John',

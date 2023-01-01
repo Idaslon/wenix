@@ -1,6 +1,5 @@
-import { User } from '@prisma/client'
 import { validateCreateUser } from '@wenix/validations'
-import { UsersRepository } from '../../repositories/users-repository'
+import { User, UsersRepository } from '../../repositories/users-repository'
 import { EncryptionService } from '../../services/encryption-service'
 import { BaseEncryptionService } from '../../services/implementation/base-encryption-service'
 
