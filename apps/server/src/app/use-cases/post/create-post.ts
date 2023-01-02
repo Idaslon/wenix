@@ -1,4 +1,5 @@
 import { validateCreatePost } from '@wenix/validations'
+import { AppError } from '../../error/app-error'
 import { Post, PostsRepository } from '../../repositories/posts-repository'
 import { UsersRepository } from '../../repositories/users-repository'
 
@@ -27,7 +28,7 @@ export class CreatePostUseCase {
     })
 
     if (userExists === null) {
-      throw new Error('Author not found')
+      throw new AppError({ slug: 'auth-not-found' })
     }
 
     const post = await this.postsRepository.create({

@@ -66,7 +66,7 @@ describe('Login', () => {
         email: 'john@example.com',
         password: '1234567',
       })
-    ).rejects.toThrow('Passwords does not match')
+    ).rejects.toThrow('Passwords do not match')
   })
 })
 

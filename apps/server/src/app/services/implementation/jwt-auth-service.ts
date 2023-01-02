@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken'
 import { authConfig } from '../../../config/auth'
+import { AppError } from '../../error/app-error'
 import { AuthPayload, AuthService } from '../auth-service'
 
 export class JWTAuthService implements AuthService {
@@ -13,7 +14,7 @@ export class JWTAuthService implements AuthService {
     const tokenDecoded = jwt.verify(token, authConfig.secret)
 
     if (typeof tokenDecoded === 'string' || !tokenDecoded.email) {
-      throw new Error('Invalid token')
+      throw new AppError({ slug: 'invalid-token' })
     }
 
     return {

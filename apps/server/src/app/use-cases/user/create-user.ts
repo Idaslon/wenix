@@ -1,4 +1,5 @@
 import { validateCreateUser } from '@wenix/validations'
+import { AppError } from '../../error/app-error'
 import { User, UsersRepository } from '../../repositories/users-repository'
 import { EncryptionService } from '../../services/encryption-service'
 import { BaseEncryptionService } from '../../services/implementation/base-encryption-service'
@@ -32,7 +33,7 @@ export class CreateUserUseCase {
     })
 
     if (userExists !== null) {
-      throw new Error('An user with this email already exists')
+      throw new AppError({ slug: 'email-taken' })
     }
 
     const encryptedPassword = await this.encryptionService.hashPassword(password)

@@ -1,4 +1,5 @@
 import { User } from '@prisma/client'
+import { AppError } from '../../error/app-error'
 import { UsersRepository } from '../../repositories/users-repository'
 import { AuthService } from '../../services/auth-service'
 import { EncryptionService } from '../../services/encryption-service'
@@ -33,13 +34,13 @@ export class LoginUseCase {
     })
 
     if (user === null) {
-      throw new Error('User not found')
+      throw new AppError({ slug: 'user-not-found' })
     }
 
     const isPasswordCorrect = await this.encryptionService.comparePassword(password, user.password)
 
     if (!isPasswordCorrect) {
-      throw new Error('Passwords does not match')
+      throw new AppError({ slug: 'password-mismatch' })
     }
 
     const token = this.authService.generateToken({ email: user.email })
