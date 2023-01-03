@@ -10,6 +10,7 @@
     "graphql:codegen": "graphql-codegen --config graphql.config.yaml --errors-only"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.20.4",
     "@wenix/account": "workspace:*",
     "@wenix/ui": "workspace:*",
     "next": "13.0.4",
