@@ -1,11 +1,14 @@
-schema: src/graphql/schema.gql
+schema:
+  - 'src/graphql/schema.gql'
 generates:
-  src/graphql/generated/graphql.ts:
-    documents: 'src/**/*.graphql'
+  src/graphql/generated/index.ts:
+    documents:
+      - 'src/**/*.graphql'
     plugins:
       - 'typescript'
       - 'typescript-operations'
       - 'typescript-react-query'
     config:
-      func: '../graphql-fetcher@fetchData'
-      isReactHook: false
+      fetcher:
+        func: '../graphql-fetcher#fetchData'
+        isReactHook: false
