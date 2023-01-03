@@ -6,5 +6,8 @@
   ],
   "rules": {
     "react/display-name": "off"
-  }
+  },
+  "ignorePatterns": [
+    "src/graphql/generated/**/*.ts"
+  ]
 }

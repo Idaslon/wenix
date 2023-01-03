@@ -6,17 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "graphql:generate": "graphql-codegen"
   },
   "dependencies": {
+    "@graphql-typed-document-node/core": "^3.1.1",
     "@wenix/account": "workspace:*",
     "@wenix/ui": "workspace:*",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.1.0",
     "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.16.2",
+    "@graphql-codegen/client-preset": "^1.2.4",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
