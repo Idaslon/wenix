@@ -13,7 +13,8 @@ const _Login = () => {
   return (
     <Container>
       <SEO title="Login" />
-      <LoginForm />
+
+      <LoginForm onSubmit={console.log} />
     </Container>
   )
 }
