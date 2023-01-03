@@ -1,0 +1,17 @@
+{
+  "graphql-config.load.rootDir": "./apps/web",
+  "graphql-config.load.configName": "graphql",
+  "cSpell.words": [
+    "asynciterable",
+    "Ballerz",
+    "codegen",
+    "Crossweb",
+    "dtos",
+    "msapplication",
+    "nextjs",
+    "preinstall",
+    "tsnd",
+    "unoptimized",
+    "wenix"
+  ]
+}
