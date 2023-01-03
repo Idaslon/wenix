@@ -7,14 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "graphql:generate": "graphql-codegen"
+    "graphql:codegen": "graphql-codegen --config graphql.config.yaml --errors-only"
   },
   "dependencies": {
-    "@graphql-typed-document-node/core": "^3.1.1",
     "@wenix/account": "workspace:*",
     "@wenix/ui": "workspace:*",
-    "graphql": "^16.6.0",
-    "graphql-request": "^5.1.0",
     "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -22,11 +19,13 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.16.2",
-    "@graphql-codegen/client-preset": "^1.2.4",
+    "@graphql-codegen/typescript-operations": "^2.5.11",
+    "@graphql-codegen/typescript-react-query": "^4.0.6",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "eslint-config-custom": "workspace:*",
+    "graphql": "^16.6.0",
     "tsconfig": "workspace:*"
   }
 }
