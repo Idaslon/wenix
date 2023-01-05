@@ -14,19 +14,63 @@ import {
   SideContainer,
 } from './styles'
 
-export const CreateAccountForm = () => {
+export interface CreateAccountFormSubmitData {
+  name: string
+  email: string
+  password: string
+}
+
+export type CreateAccountFormErrors = Partial<CreateAccountFormSubmitData>
+
+interface CreateAccountFormProps {
+  onSubmit: (data: CreateAccountFormSubmitData) => void
+  errors?: CreateAccountFormErrors
+}
+
+export const CreateAccountForm = ({ onSubmit, errors }: CreateAccountFormProps) => {
   return (
-    <AccountForm>
+    <AccountForm
+      onSubmit={(event) => {
+        event.preventDefault()
+
+        const formData = new FormData(event.target as HTMLFormElement)
+        const data = Object.fromEntries(formData.entries())
+
+        onSubmit(data as unknown as CreateAccountFormSubmitData)
+      }}
+    >
       <SideContainer>
         <AccountTitle variant="h1">Create Account</AccountTitle>
 
         <InputsContainer>
-          <Input required type="text" name="name" placeholder="Enter your name" />
-          <Input required type="email" name="email" placeholder="Enter your email" />
-          <Input required type="password" name="password" placeholder="Enter your password" />
+          <Input
+            required
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            error={errors?.name}
+          />
+
+          <Input
+            required
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            error={errors?.email}
+          />
+
+          <Input
+            required
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            error={errors?.password}
+          />
         </InputsContainer>
 
-        <AccountButton size="large">Create Account</AccountButton>
+        <AccountButton type="submit" size="large">
+          Create Account
+        </AccountButton>
       </SideContainer>
 
       <SideContainer>

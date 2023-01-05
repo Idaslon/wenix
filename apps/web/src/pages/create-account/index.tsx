@@ -1,7 +1,7 @@
 import { styled } from '@wenix/ui'
 import { CreateAccountForm } from '@wenix/account'
-import { useEffect, useState } from 'react'
 import { SEO } from '../../components/seo'
+import { RegisterInput, useRegisterMutation } from '../../graphql'
 
 const Container = styled('div', {
   display: 'flex',
@@ -11,18 +11,16 @@ const Container = styled('div', {
 })
 
 const _CreateAccount = () => {
-  const [user, setUser] = useState({})
+  const { mutateAsync } = useRegisterMutation()
 
-  useEffect(() => {
-    if (!user) return
-
-    setUser({})
-  }, [])
+  const handleCreateAccount = async (data: RegisterInput) => {
+    await mutateAsync({ data }).catch((error: Error) => console.log(error.message))
+  }
 
   return (
     <Container>
       <SEO title="Create Account" />
-      <CreateAccountForm />
+      <CreateAccountForm onSubmit={handleCreateAccount} />
     </Container>
   )
 }

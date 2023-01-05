@@ -8,11 +8,3 @@ mutation Login($data: LoginInput!) {
     }
   }
 }
-
-mutation Register($data: RegisterInput!) {
-  register(data: $data) {
-    id
-    name
-    email
-  }
-}

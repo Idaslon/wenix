@@ -6,10 +6,7 @@ export interface LoginFormSubmitData {
   password: string
 }
 
-export interface LoginFormErrors {
-  email?: string
-  password?: string
-}
+export type LoginFormErrors = Partial<LoginFormSubmitData>
 
 interface LoginFormProps {
   onSubmit: (data: LoginFormSubmitData) => void

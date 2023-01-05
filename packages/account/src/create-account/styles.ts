@@ -25,6 +25,10 @@ export const LeftSideSpacer = styled('div', {
 
 export const InputsContainer = styled(FormInputsContainer, {
   marginTop: spacing(10),
+
+  input: {
+    width: '100%',
+  },
 })
 
 export const AccountButton = styled(Button, {
