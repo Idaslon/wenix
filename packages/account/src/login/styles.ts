@@ -9,6 +9,10 @@ export const StyledForm = styled(Form, {
 
 export const InputsContainer = styled(FormInputsContainer, {
   marginTop: spacing(9),
+
+  input: {
+    width: '100%',
+  },
 })
 
 export const LoginLink = styled(Link, {

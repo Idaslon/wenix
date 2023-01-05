@@ -1,4 +1,4 @@
-import { createStitches } from '@stitches/react';
+import { createStitches } from '@stitches/react'
 
 export const { styled, css, getCssText, keyframes } = createStitches({
   theme: {
@@ -21,6 +21,8 @@ export const { styled, css, getCssText, keyframes } = createStitches({
       gray800: 'hsl(0, 0%, 30%)',
 
       blue200: 'hsl(217, 100%, 61%)',
+
+      red500: 'hsl(0, 62%, 54%)',
 
       black600: 'hsl(180, 2%, 8%)',
       black700: 'hsl(180, 4%, 5%)',
@@ -54,8 +56,8 @@ export const { styled, css, getCssText, keyframes } = createStitches({
     xl: '(min-width: 1200px)',
     '2xl': '(min-width: 1440px)',
   },
-});
+})
 
 export function spacing(value: number) {
-  return value * 4;
+  return value * 4
 }

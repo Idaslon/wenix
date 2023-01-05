@@ -15,6 +15,7 @@ const _Login = () => {
 
   const handleLogin = async (data: LoginFormSubmitData) => {
     await login(data).catch((error: Error) => {})
+    console.log('Logged In')
   }
 
   return (

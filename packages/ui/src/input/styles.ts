@@ -1,5 +1,7 @@
 import { spacing, styled } from '../../stitches.config'
 
+export const InputContainer = styled('div', {})
+
 export const StyledInput = styled('input', {
   paddingBlock: spacing(4.5),
   paddingInline: '$5',
@@ -35,4 +37,12 @@ export const StyledInput = styled('input', {
   '&:focus': {
     borderColor: '$primary400',
   },
+})
+
+export const StyledError = styled('small', {
+  display: 'inline-block',
+  marginTop: '$2',
+
+  fontSize: 'small',
+  color: '$red500',
 })

@@ -1,7 +1,19 @@
-import { InputHTMLAttributes } from 'react'
-import { StyledInput } from './styles'
+import { InputHTMLAttributes, HtmlHTMLAttributes } from 'react'
+import { InputContainer, StyledError, StyledInput } from './styles'
 
-export type InputProps = InputHTMLAttributes<HTMLInputElement>
 export type InputRef = HTMLInputElement
 
-export const Input = StyledInput
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  error?: string
+  containerProps?: HtmlHTMLAttributes<HTMLDivElement>
+  errorProps?: HtmlHTMLAttributes<HTMLSpanElement>
+}
+
+export const Input = ({ containerProps, error, errorProps, ...props }: InputProps) => {
+  return (
+    <InputContainer {...containerProps}>
+      <StyledInput {...props} />
+      {error && <StyledError {...errorProps}>{error}</StyledError>}
+    </InputContainer>
+  )
+}
