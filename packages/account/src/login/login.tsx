@@ -6,11 +6,17 @@ export interface LoginFormSubmitData {
   password: string
 }
 
-interface LoginFormProps {
-  onSubmit: (data: LoginFormSubmitData) => void
+export interface LoginFormErrors {
+  email?: string
+  password?: string
 }
 
-export const LoginForm = ({ onSubmit }: LoginFormProps) => {
+interface LoginFormProps {
+  onSubmit: (data: LoginFormSubmitData) => void
+  errors?: LoginFormErrors
+}
+
+export const LoginForm = ({ onSubmit, errors }: LoginFormProps) => {
   return (
     <StyledForm
       onSubmit={(event) => {
@@ -25,8 +31,21 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
       <Typography variant="h1">Sign into Wenix</Typography>
 
       <InputsContainer>
-        <Input required type="email" name="email" placeholder="Enter your email" />
-        <Input required type="password" name="password" placeholder="Enter your password" />
+        <Input
+          required
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          error={errors?.email}
+        />
+
+        <Input
+          required
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          error={errors?.password}
+        />
 
         <LoginLink href="#">Forgot password</LoginLink>
       </InputsContainer>
