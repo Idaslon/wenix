@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react'
+import { styled } from '@wenix/ui'
 import { CreateAccountForm } from '@wenix/account'
 import { useEffect, useState } from 'react'
 import { SEO } from '../../components/seo'
