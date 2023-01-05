@@ -1,6 +1,7 @@
-import { LoginForm } from '@wenix/account'
+import { LoginForm, LoginFormSubmitData } from '@wenix/account'
 import { styled } from '@wenix/ui'
 import { SEO } from '../../components/seo'
+import { useAuth } from '../../contexts/auth'
 
 const Container = styled('div', {
   display: 'flex',
@@ -10,11 +11,17 @@ const Container = styled('div', {
 })
 
 const _Login = () => {
+  const { login } = useAuth()
+
+  const handleLogin = async (data: LoginFormSubmitData) => {
+    await login(data).catch((error: Error) => {})
+  }
+
   return (
     <Container>
       <SEO title="Login" />
 
-      <LoginForm onSubmit={console.log} />
+      <LoginForm onSubmit={handleLogin} />
     </Container>
   )
 }

@@ -1,5 +1,5 @@
 import { createContext, PropsWithChildren, useCallback, useContext, useState } from 'react'
-import { useLoginMutation, UserModel } from '../../graphql'
+import { LoginModel, useLoginMutation, UserModel } from '../../graphql'
 
 interface LoginProps {
   email: string
@@ -8,11 +8,9 @@ interface LoginProps {
 
 interface Auth {
   user: UserModel | null
-
   isLoggedIn: boolean
-  isLoadingLogin: boolean
 
-  login: (props: LoginProps) => void
+  login: (props: LoginProps) => Promise<LoginModel>
 }
 
 const AuthContext = createContext<Auth | null>(null)
@@ -22,24 +20,19 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
 
   const isLoggedIn = user !== null
 
-  const { mutate, isLoading: isLoadingLogin } = useLoginMutation({
-    onSuccess(data) {
-      setUser(data.login.user)
-    },
-  })
+  const { mutateAsync } = useLoginMutation()
 
   const login = useCallback(
-    (props: LoginProps) => {
-      mutate({ data: props })
+    async (props: LoginProps) => {
+      const response = await mutateAsync({ data: props })
+      setUser(response.login.user)
+
+      return response.login
     },
-    [mutate]
+    [mutateAsync]
   )
 
-  return (
-    <AuthContext.Provider value={{ user, isLoggedIn, isLoadingLogin, login }}>
-      {children}
-    </AuthContext.Provider>
-  )
+  return <AuthContext.Provider value={{ user, isLoggedIn, login }}>{children}</AuthContext.Provider>
 }
 
 export const useAuth = () => {

@@ -1,7 +1,7 @@
 import { Input, Typography } from '@wenix/ui'
 import { CreateAccountText, InputsContainer, LoginButton, StyledForm, LoginLink } from './styles'
 
-interface LoginFormSubmitData {
+export interface LoginFormSubmitData {
   email: string
   password: string
 }

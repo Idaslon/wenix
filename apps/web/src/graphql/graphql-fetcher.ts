@@ -19,7 +19,7 @@ export const fetchData = <TData, TVariables>(
     const json = await res.json()
 
     if (json.errors) {
-      const { message } = json.errors[0] || 'Error..'
+      const { message } = json.errors[0] || 'An unexpected error has ocurred'
       throw new Error(message)
     }
 
