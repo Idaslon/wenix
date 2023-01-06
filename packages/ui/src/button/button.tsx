@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes } from 'react'
 import { CoreSizes } from '../../types'
+import { Loading } from '../components/loading'
 
 import { StyledButton } from './styles'
 
@@ -8,10 +9,11 @@ export type ButtonRef = HTMLButtonElement
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSizes
+  loading?: boolean
 }
 
-export const Button = ({ children, size = 'medium', ...rest }: ButtonProps) => (
+export const Button = ({ children, loading, size = 'medium', ...rest }: ButtonProps) => (
   <StyledButton size={size} {...rest}>
-    {children}
+    {loading ? <Loading /> : children}
   </StyledButton>
 )

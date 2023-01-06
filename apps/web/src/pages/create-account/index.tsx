@@ -11,7 +11,7 @@ const Container = styled('div', {
 })
 
 const _CreateAccount = () => {
-  const { mutateAsync } = useRegisterMutation()
+  const { mutateAsync, isLoading } = useRegisterMutation()
 
   const handleCreateAccount = async (data: RegisterInput) => {
     await mutateAsync({ data }).catch((error: Error) => console.log(error.message))
@@ -20,7 +20,7 @@ const _CreateAccount = () => {
   return (
     <Container>
       <SEO title="Create Account" />
-      <CreateAccountForm onSubmit={handleCreateAccount} />
+      <CreateAccountForm onSubmit={handleCreateAccount} loading={isLoading} />
     </Container>
   )
 }

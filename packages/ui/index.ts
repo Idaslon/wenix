@@ -6,3 +6,5 @@ export * from './src/input'
 export * from './src/link'
 export * from './src/typography'
 export * from './src/typography/styles'
+
+export * from './src/components'

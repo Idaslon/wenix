@@ -24,10 +24,11 @@ export type CreateAccountFormErrors = Partial<CreateAccountFormSubmitData>
 
 interface CreateAccountFormProps {
   onSubmit: (data: CreateAccountFormSubmitData) => void
+  loading?: boolean
   errors?: CreateAccountFormErrors
 }
 
-export const CreateAccountForm = ({ onSubmit, errors }: CreateAccountFormProps) => {
+export const CreateAccountForm = ({ loading, errors, onSubmit }: CreateAccountFormProps) => {
   return (
     <AccountForm
       onSubmit={(event) => {
@@ -68,7 +69,7 @@ export const CreateAccountForm = ({ onSubmit, errors }: CreateAccountFormProps) 
           />
         </InputsContainer>
 
-        <AccountButton type="submit" size="large">
+        <AccountButton type="submit" size="large" loading={loading}>
           Create Account
         </AccountButton>
       </SideContainer>

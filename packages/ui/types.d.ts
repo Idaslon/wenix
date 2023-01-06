@@ -1,1 +1,1 @@
-export type CoreSizes = 'small' | 'medium' | 'large';
+export type CoreSizes = 'small' | 'medium' | 'large'

@@ -1,6 +1,10 @@
 import { styled } from '../../stitches.config'
 
 export const StyledButton = styled('button', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
   color: '$common-white',
   backgroundColor: '$primary400 ',
 
@@ -51,6 +55,7 @@ export const StyledButton = styled('button', {
         paddingInline: '$3',
 
         fontSize: '1.2rem',
+        lineHeight: '1.2rem',
         fontWeight: 700,
       },
       medium: {
@@ -58,6 +63,7 @@ export const StyledButton = styled('button', {
         paddingInline: '$4',
 
         fontSize: '1.6rem',
+        lineHeight: '1.6rem',
         fontWeight: 700,
       },
       large: {
@@ -65,6 +71,7 @@ export const StyledButton = styled('button', {
         paddingInline: '$5',
 
         fontSize: '1.8rem',
+        lineHeight: '1.8rem',
         fontWeight: 700,
       },
     },
