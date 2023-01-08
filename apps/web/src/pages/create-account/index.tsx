@@ -3,6 +3,7 @@ import { CreateAccountForm, CreateAccountFormErrors } from '@wenix/account'
 import { SEO } from '../../components/seo'
 import { RegisterInput, useRegisterMutation } from '../../graphql'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 const Container = styled('div', {
   display: 'flex',
@@ -20,14 +21,18 @@ const messagesMap: { [key: string]: CreateAccountFormErrors } = {
 }
 
 const _CreateAccount = () => {
-  const [formErrors, setFormErrors] = useState<CreateAccountFormErrors>()
+  const router = useRouter()
   const { mutateAsync, isLoading } = useRegisterMutation()
+
+  const [formErrors, setFormErrors] = useState<CreateAccountFormErrors>()
 
   const handleCreateAccount = async (data: RegisterInput) => {
     await mutateAsync({ data }).catch((error: Error) => {
       const errorsMessages = messagesMap[error.message]
       setFormErrors(errorsMessages)
     })
+
+    router.push('/login')
   }
 
   return (

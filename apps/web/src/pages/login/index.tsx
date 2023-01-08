@@ -29,10 +29,12 @@ const _Login = () => {
   const [formErrors, setFormErrors] = useState<LoginFormErrors | undefined>(undefined)
 
   const handleLogin = async (data: LoginFormSubmitData) => {
-    await login(data).catch((error: Error) => {
+    const response = await login(data).catch((error: Error) => {
       const errorsMessages = messagesMap[error.message]
       setFormErrors(errorsMessages)
     })
+
+    console.log(response)
   }
 
   return (

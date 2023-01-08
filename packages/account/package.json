@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@wenix/ui": "workspace:*",
+    "@wenix/validations": "workspace:*",
     "react-icons": "^4.6.0"
   },
   "devDependencies": {

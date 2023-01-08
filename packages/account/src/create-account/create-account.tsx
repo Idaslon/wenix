@@ -44,24 +44,11 @@ export const CreateAccountForm = ({ loading, errors, onSubmit }: CreateAccountFo
         <AccountTitle variant="h1">Create Account</AccountTitle>
 
         <InputsContainer>
-          <Input
-            required
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            error={errors?.name}
-          />
+          <Input type="text" name="name" placeholder="Enter your name" error={errors?.name} />
+
+          <Input type="email" name="email" placeholder="Enter your email" error={errors?.email} />
 
           <Input
-            required
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            error={errors?.email}
-          />
-
-          <Input
-            required
             type="password"
             name="password"
             placeholder="Enter your password"

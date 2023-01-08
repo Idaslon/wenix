@@ -13,6 +13,7 @@
     "@tanstack/react-query": "^4.20.4",
     "@wenix/account": "workspace:*",
     "@wenix/ui": "workspace:*",
+    "@wenix/validations": "workspace:*",
     "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -27,6 +28,7 @@
     "@types/react-dom": "18.0.9",
     "eslint-config-custom": "workspace:*",
     "graphql": "^16.6.0",
-    "tsconfig": "workspace:*"
+    "tsconfig": "workspace:*",
+    "typescript": "4.9.4"
   }
 }

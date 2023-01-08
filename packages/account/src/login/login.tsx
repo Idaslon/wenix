@@ -28,16 +28,9 @@ export const LoginForm = ({ onSubmit, errors }: LoginFormProps) => {
       <Typography variant="h1">Sign into Wenix</Typography>
 
       <InputsContainer>
-        <Input
-          required
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          error={errors?.email}
-        />
+        <Input type="email" name="email" placeholder="Enter your email" error={errors?.email} />
 
         <Input
-          required
           type="password"
           name="password"
           placeholder="Enter your password"
