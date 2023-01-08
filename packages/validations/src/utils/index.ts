@@ -7,7 +7,7 @@ export function validateSchema<T extends z.Schema>(schema: T, props: Record<stri
     return response as z.infer<typeof schema>
   } catch (error) {
     if (error instanceof z.ZodError) {
-      throw new ValidationError(error.issues[0].message)
+      throw ValidationError.fromZodError(error)
     }
 
     throw error

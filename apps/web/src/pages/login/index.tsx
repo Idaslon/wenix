@@ -1,8 +1,10 @@
 import { LoginForm, LoginFormErrors, LoginFormSubmitData } from '@wenix/account'
 import { styled } from '@wenix/ui'
+import { loginSchema } from '@wenix/validations'
 import { useState } from 'react'
 import { SEO } from '../../components/seo'
 import { useAuth } from '../../contexts/auth'
+import { safeFormValidation } from '../../utils/form'
 
 const Container = styled('div', {
   display: 'flex',
@@ -25,16 +27,25 @@ const messagesMap: { [key: string]: LoginFormErrors } = {
 
 const _Login = () => {
   const { login } = useAuth()
-
   const [formErrors, setFormErrors] = useState<LoginFormErrors | undefined>(undefined)
 
-  const handleLogin = async (data: LoginFormSubmitData) => {
+  const handleLogin = async (formData: LoginFormSubmitData) => {
+    const { data, issues } = safeFormValidation(loginSchema, formData)
+
+    if (issues) {
+      setFormErrors(issues)
+      return
+    }
+
     const response = await login(data).catch((error: Error) => {
       const errorsMessages = messagesMap[error.message]
       setFormErrors(errorsMessages)
     })
 
-    console.log(response)
+    if (response) {
+      console.log(response)
+      setFormErrors(undefined)
+    }
   }
 
   return (
