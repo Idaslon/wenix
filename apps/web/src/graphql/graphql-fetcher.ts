@@ -1,10 +1,12 @@
+import { appConfig } from '../config/app'
+
 export const fetchData = <TData, TVariables>(
   query: string,
   variables?: TVariables,
   options?: RequestInit['headers']
 ): (() => Promise<TData>) => {
   return async () => {
-    const res = await fetch('http://localhost:4000', {
+    const res = await fetch(appConfig.serverEndpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

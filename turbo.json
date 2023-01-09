@@ -42,11 +42,13 @@
     },
     "web#dev": {
       "env": [
+        "NEXT_PUBLIC_SERVER_ENDPOINT",
         "NEXT_PUBLIC_SITE_DOMAIN"
       ]
     },
     "web#build": {
       "env": [
+        "NEXT_PUBLIC_SERVER_ENDPOINT",
         "NEXT_PUBLIC_SITE_DOMAIN"
       ]
     }
