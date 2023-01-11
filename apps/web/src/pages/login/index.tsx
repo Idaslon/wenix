@@ -26,7 +26,7 @@ const messagesMap: { [key: string]: LoginFormErrors } = {
 }
 
 const _Login = () => {
-  const { login } = useAuth()
+  const { login, isLoadingLogin } = useAuth()
   const [formErrors, setFormErrors] = useState<LoginFormErrors | undefined>(undefined)
 
   const handleLogin = async (formData: LoginFormSubmitData) => {
@@ -52,7 +52,7 @@ const _Login = () => {
     <Container>
       <SEO title="Login" />
 
-      <LoginForm onSubmit={handleLogin} errors={formErrors} />
+      <LoginForm onSubmit={handleLogin} errors={formErrors} loading={isLoadingLogin} />
     </Container>
   )
 }

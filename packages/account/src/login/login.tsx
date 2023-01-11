@@ -11,9 +11,10 @@ export type LoginFormErrors = Partial<LoginFormSubmitData>
 interface LoginFormProps {
   onSubmit: (data: LoginFormSubmitData) => void
   errors?: LoginFormErrors
+  loading?: boolean
 }
 
-export const LoginForm = ({ onSubmit, errors }: LoginFormProps) => {
+export const LoginForm = ({ onSubmit, errors, loading }: LoginFormProps) => {
   return (
     <StyledForm
       onSubmit={(event) => {
@@ -40,7 +41,7 @@ export const LoginForm = ({ onSubmit, errors }: LoginFormProps) => {
         <LoginLink href="#">Forgot password</LoginLink>
       </InputsContainer>
 
-      <LoginButton type="submit" size="large">
+      <LoginButton type="submit" size="large" loading={loading}>
         Sign In
       </LoginButton>
 

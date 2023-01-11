@@ -10,6 +10,7 @@ interface LoginProps {
 interface Auth {
   user: UserModel | null
   isLoggedIn: boolean
+  isLoadingLogin: boolean
 
   login: (props: LoginProps) => Promise<LoginModel>
 }
@@ -21,7 +22,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
 
   const isLoggedIn = user !== null
 
-  const { mutateAsync } = useLoginMutation()
+  const { mutateAsync, isLoading: isLoadingLogin } = useLoginMutation()
 
   const login = useCallback(
     async (props: LoginProps) => {
@@ -35,7 +36,11 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     [mutateAsync]
   )
 
-  return <AuthContext.Provider value={{ user, isLoggedIn, login }}>{children}</AuthContext.Provider>
+  return (
+    <AuthContext.Provider value={{ user, isLoggedIn, login, isLoadingLogin }}>
+      {children}
+    </AuthContext.Provider>
+  )
 }
 
 export const useAuth = () => {
