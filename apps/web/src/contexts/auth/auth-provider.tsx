@@ -1,4 +1,5 @@
 import { createContext, PropsWithChildren, useCallback, useContext, useState } from 'react'
+import { apiStorage } from '../../api/utils'
 import { LoginModel, useLoginMutation, UserModel } from '../../graphql'
 
 interface LoginProps {
@@ -25,6 +26,8 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
   const login = useCallback(
     async (props: LoginProps) => {
       const response = await mutateAsync({ data: props })
+
+      apiStorage.setAuthorization(response.login.token)
       setUser(response.login.user)
 
       return response.login
