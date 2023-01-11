@@ -1,7 +1,7 @@
 import { Button, Form, Link, spacing, styled, Typography, TypographyBody1 } from '@wenix/ui'
-import { FormInputsContainer } from '../shared/styles'
+import { FormInputsContainer } from '../../shared/styles'
 
-export const AccountForm = styled(Form, {
+export const StyledAccountForm = styled(Form, {
   flexDirection: 'row',
   columnGap: spacing(5),
   justifyContent: 'space-between',

@@ -4,7 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi'
 
 import {
   AccountButton,
-  AccountForm,
+  StyledAccountForm,
   AccountTitle,
   InputsContainer,
   LeftSideSpacer,
@@ -30,7 +30,7 @@ interface CreateAccountFormProps {
 
 export const CreateAccountForm = ({ loading, errors, onSubmit }: CreateAccountFormProps) => {
   return (
-    <AccountForm
+    <StyledAccountForm
       onSubmit={(event) => {
         event.preventDefault()
 
@@ -78,6 +78,6 @@ export const CreateAccountForm = ({ loading, errors, onSubmit }: CreateAccountFo
           <Typography variant="body1">Back to Login</Typography>
         </LoginLink>
       </SideContainer>
-    </AccountForm>
+    </StyledAccountForm>
   )
 }

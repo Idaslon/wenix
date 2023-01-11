@@ -1,5 +1,11 @@
 import { Input, Typography } from '@wenix/ui'
-import { CreateAccountText, InputsContainer, LoginButton, StyledForm, LoginLink } from './styles'
+import {
+  CreateAccountText,
+  InputsContainer,
+  LoginButton,
+  StyledLoginForm,
+  LoginLink,
+} from './styles'
 
 export interface LoginFormSubmitData {
   email: string
@@ -16,7 +22,7 @@ interface LoginFormProps {
 
 export const LoginForm = ({ onSubmit, errors, loading }: LoginFormProps) => {
   return (
-    <StyledForm
+    <StyledLoginForm
       onSubmit={(event) => {
         event.preventDefault()
 
@@ -48,6 +54,6 @@ export const LoginForm = ({ onSubmit, errors, loading }: LoginFormProps) => {
       <CreateAccountText variant="body1">
         Do not have an account? <LoginLink href="/create-account">Create one</LoginLink>
       </CreateAccountText>
-    </StyledForm>
+    </StyledLoginForm>
   )
 }

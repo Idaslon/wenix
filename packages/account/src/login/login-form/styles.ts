@@ -1,8 +1,8 @@
 import { Button, Form, Link, spacing, styled, Typography } from '@wenix/ui'
 
-import { FormInputsContainer } from '../shared/styles'
+import { FormInputsContainer } from '../../shared/styles'
 
-export const StyledForm = styled(Form, {
+export const StyledLoginForm = styled(Form, {
   width: '100%',
   maxWidth: '450px',
 })
