@@ -1,3 +1,4 @@
+import { apiStorage } from '../api/utils'
 import { appConfig } from '../config/app'
 
 export const fetchData = <TData, TVariables>(
@@ -6,11 +7,21 @@ export const fetchData = <TData, TVariables>(
   options?: RequestInit['headers']
 ): (() => Promise<TData>) => {
   return async () => {
+    const authorization = apiStorage.getAuthorization()
+
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+    }
+
+    if (authorization) {
+      headers['Authorization'] = authorization
+    }
+
     const res = await fetch(appConfig.serverEndpoint, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        ...(options ?? {}),
+        ...headers,
+        ...options,
       },
       body: JSON.stringify({
         query,

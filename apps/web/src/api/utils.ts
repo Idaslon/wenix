@@ -14,7 +14,7 @@ function getItem<T extends string>(key: string) {
 
 function setItem(key: string, value: string) {
   const storageKey = STORAGE_PREFIX + key
-  return localStorage.setItem(storageKey, value)
+  return localStorage.setItem(storageKey, JSON.stringify(value))
 }
 
 function removeItem(key: string) {
