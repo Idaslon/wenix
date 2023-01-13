@@ -13,7 +13,6 @@ export const StyledInput = styled('input', {
   borderColor: '$stroke',
   borderRadius: '4px',
 
-  outline: 'none',
   backgroundColor: '$black700',
 
   '&::placeholder': {

@@ -5,8 +5,6 @@ export const StyledLink = styled(NextLink, {
   color: '$common-white',
   textDecoration: 'none',
 
-  outline: 'none',
-
   '&:hover, &:focus': {
     textDecoration: 'underline',
   },

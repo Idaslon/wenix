@@ -11,7 +11,6 @@ export const StyledTextArea = styled('textarea', {
   borderColor: '$stroke',
   borderRadius: '4px',
 
-  outline: 'none',
   backgroundColor: '$black700',
 
   '&::placeholder': {

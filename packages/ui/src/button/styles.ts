@@ -11,7 +11,6 @@ export const StyledButton = styled('button', {
   borderRadius: '4px',
   cursor: 'pointer',
 
-  outline: 'none',
   transition: 'background 300ms ease-in-out',
 
   '&:hover': {
