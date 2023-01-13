@@ -1,16 +1,24 @@
-import { GetServerSideProps } from 'next'
+import { styled, TextArea } from '@wenix/ui'
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    redirect: {
-      destination: '/login',
-      permanent: true,
-    },
-  }
-}
+const Container = styled('div', {
+  width: '100%',
+  maxWidth: '600px',
+
+  marginInline: 'auto',
+  marginTop: '120px',
+
+  padding: '20px',
+
+  backgroundColor: '$black600',
+  borderRadius: '10px',
+})
 
 const Home = () => {
-  return <h1>Home</h1>
+  return (
+    <Container>
+      <TextArea placeholder="Tell what you think..." />
+    </Container>
+  )
 }
 
 export default Home
