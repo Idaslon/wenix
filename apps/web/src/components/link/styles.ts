@@ -1,5 +1,5 @@
 import { default as NextLink } from 'next/link'
-import { styled } from '../../stitches.config'
+import { styled } from '@wenix/ui'
 
 export const StyledLink = styled(NextLink, {
   color: '$common-white',
