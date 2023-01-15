@@ -9,11 +9,11 @@
   ],
   "peerDependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-icons": "^4.6.0"
+    "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@stitches/react": "^1.2.8"
+    "@stitches/react": "^1.2.8",
+    "react-icons": "^4.6.0"
   },
   "devDependencies": {
     "@types/node": "18.11.17",

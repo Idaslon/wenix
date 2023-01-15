@@ -8,3 +8,4 @@ export * from './src/typography'
 export * from './src/typography/styles'
 
 export * from './src/components'
+export * from './src/icons'
