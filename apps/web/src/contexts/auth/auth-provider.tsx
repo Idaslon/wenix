@@ -13,6 +13,7 @@ interface Auth {
   isLoadingLogin: boolean
 
   login: (props: LoginProps) => Promise<LoginModel>
+  logout: () => void
 }
 
 const AuthContext = createContext<Auth | null>(null)
@@ -36,8 +37,13 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     [mutateAsync]
   )
 
+  const logout = useCallback(() => {
+    apiStorage.removeAuthorization()
+    setUser(null)
+  }, [])
+
   return (
-    <AuthContext.Provider value={{ user, isLoggedIn, login, isLoadingLogin }}>
+    <AuthContext.Provider value={{ user, isLoggedIn, login, isLoadingLogin, logout }}>
       {children}
     </AuthContext.Provider>
   )
