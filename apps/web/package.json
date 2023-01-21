@@ -10,6 +10,7 @@
     "graphql:codegen": "graphql-codegen --config graphql.config.yaml --errors-only"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.0.3",
     "@tanstack/react-query": "^4.20.4",
     "@wenix/account": "workspace:*",
     "@wenix/ui": "workspace:*",
